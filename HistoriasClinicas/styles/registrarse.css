@@ -1,0 +1,47 @@
+
+.form{
+    width: 25%;
+    margin: 50px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+}
+
+.formulario .input1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario .input1 label{
+    margin-top: 10px;
+}
+
+.formulario .input1 input{
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.input1 button{
+    margin-top: 10px;
+}
+
+.loguin{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.loguin .btn.btn-prymary{
+    width: 50%;
+}
+
+.form h3{
+    text-align: center;
+    font-weight: bold;
+    color: darkcyan;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+
+    
+  }
+  
