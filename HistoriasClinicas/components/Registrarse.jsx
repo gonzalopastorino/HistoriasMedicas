@@ -1,55 +1,3 @@
-/*import React from "react";
-import "../styles/registrarse.css"
-import { Link } from "react-router-dom";
-
-const Registrarse = () => {
-    return (
-        <div className="form">
-            <h3>Registrarse</h3>
-            <form action="" className="formulario">
-                <div className="input1">
-                    <label htmlFor="nombre">Nombre:</label>
-                    <input 
-                        type="text" 
-                        id="nombre" 
-                        placeholder="Ingrese su nombre" 
-                    />
-
-                    <label htmlFor="email">Email:</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        placeholder="Ingrese su email" 
-                    />
-
-                    <label htmlFor="contrasena">Contraseña:</label>
-                    <input 
-                        type="password" 
-                        id="contrasena" 
-                        placeholder="Ingrese su contraseña" 
-                    />
-
-                   
-                    <button type="submit" className="btn btn-success">
-                        Registrarse
-                    </button>
-                </div>
-            </form>
-            <div className="loguin">
-                <p>Ya tienes una cuenta?</p>
-                <Link to={'/login'} type="submit" className="btn btn-primary">
-                    IniciarSesion
-
-                </Link>
-            </div>
-        </div>
-    )
-}
-
-export default Registrarse;*/
-
-
-
 import React, { useState } from 'react';
 import '../styles/registrarse.css';
 import { Link } from 'react-router-dom';
@@ -63,8 +11,7 @@ const Registrarse = () => {
         e.preventDefault();
 
         if (nombre && email && password) {
-            const usuario = { nombre, email, password }; // Almacena también la contraseña
-            // Guardar usuario en localStorage
+            const usuario = { nombre, email, password }; 
             localStorage.setItem('usuario', JSON.stringify(usuario));
             alert('Usuario registrado correctamente');
         } else {

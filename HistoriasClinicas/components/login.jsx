@@ -1,76 +1,27 @@
-/*import React from "react";
-import '../styles/login.css';
-import { Link } from "react-router-dom";
-
-
-const Login = () => {
-    return (
-        <div className="form">
-            <h3>Iniciar Sesion</h3>
-            <form action="" className="formulario">
-                <div className="input1">
-                    
-                    <label htmlFor="email">Email:</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        placeholder="Ingrese su email" 
-                    />
-
-                    <label htmlFor="contrasena">Contraseña:</label>
-                    <input 
-                        type="password" 
-                        id="contrasena" 
-                        placeholder="Ingrese su contraseña" 
-                    />
-
-                   
-                    <button type="submit" className="btn btn-primary">
-                        Iniciar Sesion
-                    </button>
-                </div>
-            </form>
-            <div className="loguin">
-                <p>No tienes cuenta?</p>
-                <Link to={'/'} type="submit" className="btn btn-success">
-                    Registrate
-
-                </Link>
-            </div>
-        </div>
-    )
-}
-
-export default Login;*/
-
 import React, { useState } from 'react';
-import '../styles/login.css'; // Asegúrate de tener el archivo CSS para el login
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import '../styles/login.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
 
-        // Obtener el usuario del localStorage
-        const usuarioGuardado = JSON.parse(localStorage.getItem('usuario'));
+        const usuarioRegistrado = JSON.parse(localStorage.getItem('usuario'));
 
-        if (usuarioGuardado) {
-            // Verificar si el email coincide
-            if (usuarioGuardado.email === email) {
-                // Verificar si la contraseña coincide
-                if (usuarioGuardado.password === password) {
-                    alert(`Bienvenido, ${usuarioGuardado.nombre}`); // Muestra un mensaje de bienvenida
-                } else {
-                    alert('Contraseña incorrecta');
-                }
+        if (usuarioRegistrado) {
+            if (email === usuarioRegistrado.email && password === usuarioRegistrado.password) {
+                alert(`Bienvenido, ${usuarioRegistrado.nombre}`);
+                navigate('/bienvenida');  
             } else {
-                alert('Email incorrecto');
+                alert('Contraseña incorrecta');
             }
         } else {
-            alert('No hay usuarios registrados con este email');
+            alert('Usuario no registrado');
         }
     };
 
@@ -98,7 +49,6 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    
                     <button type="submit" className="btn btn-success">Iniciar Sesión</button>
                 </div>
             </form>
@@ -111,3 +61,6 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
