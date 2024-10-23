@@ -7,4 +7,11 @@
 #### -Edad:
 #### -Diagnostico:
 
+## Se agrego nuevo componente:
+### Tabla de pacientes.
+#### Creado con react-data-table-component. Simple pero permite buena funcionabilidad.
+#### Se creo funcion para spinner que falta implementar.
+
+##CONTINUARA...
+
 
