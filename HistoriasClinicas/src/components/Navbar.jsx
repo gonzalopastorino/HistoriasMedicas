@@ -1,10 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand ms-3" href="#">Historias Clínicas</a>
+      <Link className="navbar-brand ms-3" to="/">Historias Clínicas</Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -16,6 +17,7 @@ function Navbar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
+      <Link className="navbar-brand ms-3" to="/about">Sobre Nosotros</Link>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ms-3">
           <li className="nav-item active">
