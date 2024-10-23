@@ -1,0 +1,32 @@
+.content-container {
+    display: flex;             
+    align-items: center;     
+    justify-content: center;   
+    gap: 50px;                 /* Espacio entre la imagen y el texto */
+    padding: 10px;
+    width: 80%;              
+    margin: 50px auto 0 auto;  /* Agrega un margen superior de 50px y centra horizontalmente */
+}
+  
+/* Imagen responsiva */
+.responsive-img {
+    max-width: 300px;         /* Tamaño maximo */
+    height: auto;             /* Mantiene proporciones */
+    object-fit: contain;      /* Evita distorsiones */
+    border-radius: 30px;     
+    box-shadow: 0 20px 4px rgba(0, 0, 0, 0.2); 
+}
+  
+/* Media query para pantallas pequeñas */
+@media (max-width: 1050px) {
+    .content-container {
+        flex-direction: column;  /* Cambia a diseño vertical en pantallas pequeñas */
+        align-items: center;    
+    }
+  
+    .responsive-img {
+        width: 100%;           
+        max-width: 300px;     
+        margin-right: 0;      
+    }
+}
