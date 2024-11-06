@@ -4,7 +4,7 @@ const IntroductionContent = () => {
   return (
     <div className="content-container">
       <img 
-        src="./src/assets/doctor.jpg" 
+        src="./src/assets/Images/doctor.jpg" 
         alt="Imagen de Doctor" 
         className="responsive-img" 
       />

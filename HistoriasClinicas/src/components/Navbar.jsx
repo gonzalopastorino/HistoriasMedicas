@@ -1,10 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand ms-3" href="#">Historias Clínicas</a>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <Link to={'/Home'} className="navbar-brand ms-3">Historias Clínicas</Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -19,10 +20,10 @@ function Navbar() {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ms-3">
           <li className="nav-item active">
-            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+            <Link to={'/Home'} className="nav-link">Inicio</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Features</a>
+            <a className="nav-link" href="#login-form-container">Login</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">Pricing</a>
