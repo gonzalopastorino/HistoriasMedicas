@@ -2,7 +2,10 @@ import React from 'react'
 
 const Inicio = () => {
   return (
-    <>Inicio
+    <>
+    <div className="page-container">
+      <h2>Inicio</h2>
+      </div>
     </>
   )
 }
