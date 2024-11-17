@@ -1,4 +1,4 @@
-[
+export const dataUsuarios = [
   {
     "nombre": "Carlos",
     "apellido": "Gomez",
