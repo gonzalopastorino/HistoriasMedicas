@@ -1,13 +1,15 @@
 import PacienteItem from "./PacienteItem";  
+import { usePatients } from "../components/Context/patientsProvider";
 
-const PacientesLista = ({pacientes, editarPaciente}) => {
-
+const PacientesLista = () => {
+  //const navigate = useNavigate();
+  const { patients } = usePatients();
   return (
     <>
     <h3>Registro de Pacientes</h3>
     <ul className="lista-grupo">
-      {pacientes.map((paciente, index) => (
-        <PacienteItem key={index} paciente={paciente} editarPaciente={() => editarPaciente(index)} />
+      {patients.map((patient, index) => (
+        <PacienteItem key={index} data={patient} />
       ))}
     </ul>
     </>

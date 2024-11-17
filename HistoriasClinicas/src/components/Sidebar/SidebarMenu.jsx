@@ -60,7 +60,8 @@ const SidebarMenu = () => {
                 </li>
               </ul>
             </div>
-            <div className="my-5">
+            
+            {/* <div className="my-5">
               <a className='text-decoration-none text-white dropdown-toggle p-3 my-5' type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i className="bi bi-person-circle"></i><span className="ms-3 d-none d-sm-inline">Tocame</span>
               </a>
@@ -68,7 +69,7 @@ const SidebarMenu = () => {
                 <a className="dropdown-item" href="#">Base de Datos</a>
                 <a className="dropdown-item disabled" href="#">Perfil</a>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>
