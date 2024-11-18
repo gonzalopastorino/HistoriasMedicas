@@ -1,0 +1,31 @@
+.card-medico {
+  border: 1px solid rgb(211, 205, 205);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 50px auto;
+  width: 350px;
+  background-color: rgb(236, 233, 233);
+  box-shadow: 10px 10px 5px 0px rgba(7, 7, 7, 0.7);
+} 
+
+.article-medico {
+  display: flex;
+  flex-direction: column;
+} 
+
+.img-card-medico {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.info-medico {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 12px 24px;
+}
+
+.card-medico-title {
+  margin: 0;
+}
