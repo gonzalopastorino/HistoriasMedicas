@@ -3,8 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Cards.css"
 
 const Cards = ({medico} ) => {
-  //console.log(medico)
-
+  console.log(medico)
+  
+  
+  
 
   return (
     <div className="card-medico">

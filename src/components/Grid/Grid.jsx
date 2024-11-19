@@ -6,6 +6,8 @@ import "./Grid.css"
 
 const Grid = () => {
 
+  //const dataMedica = {nombre}
+
   return (
     <div className="grid-container">
       <h1>Cartilla Medica</h1>
