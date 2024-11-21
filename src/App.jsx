@@ -7,14 +7,11 @@
 //import SidebarMenu from "./components/Sidebar/SidebarMenu";
 //import TablaPacientes from "./components/TablaPacientes";
 
-import Navbar from "./components/Navbar/Navbar";
+//import Navbar from "./components/Navbar/Navbar";
 //import Cards from "./components/Cards/Cards";
-import Grid from "./components/Grid/grid";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-
-
-
+//import Grid from "./components/Grid/grid";
+//import "bootstrap/dist/css/bootstrap.min.css";
+//import SidebarMenu from "./components/Sidebar/SidebarMenu";
 
 
 
@@ -23,8 +20,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Grid />
+      
       
     {/* <PatientsProvider>
     </PatientsProvider> */}
