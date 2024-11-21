@@ -9,7 +9,7 @@ const Grid = () => {
   return (
     <div className="grid-container">
       <h1>Cartilla Medica</h1>
-      <h2>Descripsion:</h2>
+      <h2>Descripcion:</h2>
       <p>Breve escrito que presente e informe sobre cartilla medica.</p>
       
       <div className="grid">

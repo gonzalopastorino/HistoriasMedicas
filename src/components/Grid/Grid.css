@@ -1,7 +1,6 @@
 .grid-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 24px;
   max-width: 70%;
 }
@@ -9,5 +8,5 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
 }

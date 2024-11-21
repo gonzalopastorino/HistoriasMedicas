@@ -4,10 +4,9 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from './pages/Home.jsx';
-import Dashboard from './pages/Dashboard.jsx';
-import Grid from './components/Grid/grid.jsx';
+import DashboardLayout from './pages/DashboardLayout.jsx';
 import Root from './routes/Root.jsx';
-
+import Dashboard from './pages/Dashboard.jsx';
 
 //Instanciamos rutas:
 const router = createBrowserRouter([
@@ -21,12 +20,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: < Dashboard />,
+        element: < DashboardLayout />,
+        children: [
+          {
+            path: "/dashboard",
+            element: <Dashboard />,
+          },
+        ]
       },
-      {
-        path: "/",
-        element: <Grid />,
-      }
     ]
 
   },

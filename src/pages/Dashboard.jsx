@@ -1,18 +1,16 @@
 
-import SidebarMenu from "../components/Sidebar/SidebarMenu"
-import Grid from "../components/Grid/grid"
+
+import Grid from "../components/Grid/Grid"
 
 
 
 const Dashboard = () => {
   return (
     <>
-      <div className="sidebar d-flex">
-      <SidebarMenu />
-      </div>
-      <div className="grid d-flex">
+    <div className="grid-component d-flex">
       <Grid />
-      </div>
+    </div>
+
     </>
   )
 }
