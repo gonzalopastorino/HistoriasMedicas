@@ -7,7 +7,7 @@ const NavBar = () => {
     <>
     <nav className='navBar'>
       <div className="contenedor-logo d-flex">
-        <i className="bi bi-activity px-1"></i>
+        <i className="logo-icon bi bi-activity px-1"></i>
         <a href="#" className="logo text-decoration-none text-white">NavBar</a>
       </div>
       <div className="inicio-boton-salir d-flex">

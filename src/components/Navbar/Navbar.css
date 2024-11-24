@@ -1,22 +1,35 @@
 .navBar {
   grid-area: nav;
-  background-color: rgb(112, 109, 109);
+  background-color: rgb(0, 0, 0);
   min-height: 5rem;
   padding: 1rem 2rem;
   display: flex;
+  width: 100%;
+  position: fixed;
+
   
   align-items: center;
   justify-content: space-between;
   grid-gap: 2rem;
+
+  animation: enhance-header linear both;
+  animation-timeline: scroll(root block);
+  animation-range: 0 1000px;
 }
+
+/* .navBar:hover {
+  background-color: #454848;
+  color: white;
+} */
 
 .logo {
   cursor : pointer;
   margin-left: 0.5rem;
 }
-.logo:hover {
-  color: black;
+.logo-icon {
+  color: rgb(247, 247, 248);
 }
+
 .inicio {
   align-items: center;
   cursor : pointer;
@@ -25,6 +38,12 @@
   padding: 1rem 2rem;
   border-radius: .5rem;
 }
-.inicio:hover {
-  background-color: #1f272a;
+
+@keyframes enhance-header {
+  to {
+    background: rgba(139, 138, 138, 0.4);
+    backdrop-filter: blur(10px);
+    font-size: 1rem;
+    color: black;
+  }
 }
