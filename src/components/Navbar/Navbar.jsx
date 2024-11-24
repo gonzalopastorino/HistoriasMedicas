@@ -10,7 +10,8 @@ const NavBar = () => {
         <i className="bi bi-activity px-1"></i>
         <a href="#" className="logo text-decoration-none text-white">NavBar</a>
       </div>
-      <div className="boton-salir d-flex">
+      <div className="inicio-boton-salir d-flex">
+      <a href="inicio" className="inicio text-decoration-none text-white">Inicio</a>
         <button className="btn btn-outline-info">Cerrar Secion</button>
       </div>
     </nav>

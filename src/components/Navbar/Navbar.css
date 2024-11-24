@@ -1,19 +1,30 @@
 .navBar {
   grid-area: nav;
-  background-color: rgb(83, 77, 77);
-
-  padding: 0 20px;
+  background-color: rgb(112, 109, 109);
+  min-height: 5rem;
+  padding: 1rem 2rem;
   display: flex;
   
   align-items: center;
   justify-content: space-between;
-  grid-gap: 20px;
+  grid-gap: 2rem;
 }
 
 .logo {
   cursor : pointer;
-  gap: 10px;
+  margin-left: 0.5rem;
 }
 .logo:hover {
+  color: black;
+}
+.inicio {
+  align-items: center;
+  cursor : pointer;
+  grid-gap: 2rem;
+  margin-right: 2rem;
+  padding: 1rem 2rem;
+  border-radius: .5rem;
+}
+.inicio:hover {
   background-color: #1f272a;
 }
