@@ -15,6 +15,7 @@
   animation: enhance-header linear both;
   animation-timeline: scroll(root block);
   animation-range: 0 1000px;
+  z-index: 1;
 }
 
 /* .navBar:hover {
