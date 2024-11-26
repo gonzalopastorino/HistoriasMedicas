@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../styles/login.css"
+import "../styles/login.css";
 
-const Login = ({ onCambiarVista }) => {
+const Login = ({ onCambiarVista, onLoginExitoso }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,7 +13,7 @@ const Login = ({ onCambiarVista }) => {
     if (usuarioRegistrado) {
       if (email === usuarioRegistrado.email && password === usuarioRegistrado.password) {
         alert(`Bienvenido, ${usuarioRegistrado.nombre}`);
-        // Aquí podrías agregar lógica adicional, como redireccionar o manejar el estado.
+        onLoginExitoso(usuarioRegistrado); // Enviamos el usuario al componente principal
       } else {
         alert("Contraseña incorrecta");
       }

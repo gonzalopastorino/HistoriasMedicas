@@ -3,11 +3,12 @@ import SidebarMenu from "./components/Sidebar/SidebarMenu";
 import PacientesForm from "./components/PacientesForm";
 import Registrarse from "./components/Registrarse";
 import Login from "./components/login";
+import Bienvenida from "./components/Bienvenida";
 import "../src/styles/registrarse.css";
 
 function App() {
-  // Estado para controlar la vista actual
-  const [vistaActiva, setVistaActiva] = useState("registrarse"); // Se inicia en 'registrarse'
+  const [vistaActiva, setVistaActiva] = useState("registrarse");
+  const [usuario, setUsuario] = useState(null); // Estado para guardar el usuario logueado
 
   const renderContenido = () => {
     switch (vistaActiva) {
@@ -25,7 +26,13 @@ function App() {
           <div className="text-center">
             <h1 className="mb-4">Iniciar Sesión</h1>
             <div className="mx-auto" style={{ maxWidth: "600px" }}>
-              <Login onCambiarVista={() => setVistaActiva("registrarse")} />
+              <Login
+                onCambiarVista={() => setVistaActiva("registrarse")}
+                onLoginExitoso={(usuarioLogueado) => {
+                  setUsuario(usuarioLogueado);
+                  setVistaActiva("inicio"); // Cambiamos la vista a inicio tras el login
+                }}
+              />
             </div>
           </div>
         );
@@ -39,13 +46,14 @@ function App() {
           </div>
         );
       case "inicio":
-        // Muestra el formulario de Registrarse o Login al hacer clic en "Inicio"
         return (
-          <div className="text-center">
-            <h1 className="mb-4">Registrarse</h1>
-            <div className="mx-auto" style={{ maxWidth: "600px" }}>
-              <Registrarse onCambiarVista={() => setVistaActiva("login")} />
-            </div>
+          <div className="d-flex">
+            {/* Mostrar el componente de bienvenida a la derecha del Sidebar */}
+            <SidebarMenu
+              onRegistrarPacientes={() => setVistaActiva("registrar-pacientes")}
+              onChangeView={setVistaActiva}
+            />
+            {usuario && <Bienvenida usuario={usuario} />}
           </div>
         );
       default:
@@ -55,16 +63,7 @@ function App() {
 
   return (
     <div className="container-fluid">
-      <div className="row">
-        {/* Sidebar */}
-        <SidebarMenu
-          onRegistrarPacientes={() => setVistaActiva("registrar-pacientes")}
-          onChangeView={setVistaActiva} // Pasamos la función de actualización de vista aquí
-        />
-
-        {/* Contenido principal */}
-        <div className="col p-4">{renderContenido()}</div>
-      </div>
+      <div className="row">{renderContenido()}</div>
     </div>
   );
 }
