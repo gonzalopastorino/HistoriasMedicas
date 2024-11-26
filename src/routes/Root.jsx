@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom"
 import Navbar from "../components/Navbar/Navbar"
 import "../components/Navbar/Navbar.css"
 
@@ -7,7 +6,7 @@ const Root = () => {
     <>
     
         <Navbar />
-        <Outlet />
+        
     </>
   )
 }

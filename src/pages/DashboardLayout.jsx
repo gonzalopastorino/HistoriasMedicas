@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom"
 import SidebarMenuDos from "../components/SidebarMenuDos"
 
 
@@ -7,8 +6,6 @@ const DashboardLayout = () => {
     <>
     <div className="sidebar-content d-flex" >
     <SidebarMenuDos />
-    <Outlet />
-
     </div>
     </>
   )

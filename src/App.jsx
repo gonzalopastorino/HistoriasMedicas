@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/Navbar/Navbar";
-import Home from "./pages/Home";
+//import { Routes, Route } from "react-router-dom";  
+//import SidebarMenuDos from "./components/SidebarMenuDos";
+
 import LandingPage from "./pages/LandingPage";
-import SidebarMenuDos from "./components/SidebarMenuDos";
+import "./pages/landingPage.css"
 
 
 function App() {
@@ -10,21 +10,12 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+    <LandingPage />
+      {/* <Routes>
+        <Route path="/home" element={<SidebarMenuDos />}>
 
-        <NavBar />
-
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/inicio" element={<LandingPage/>} />
-          <Route path="/Sidebar" element={<SidebarMenuDos/>} />
-        </Routes>
-      
-
-
-      </BrowserRouter>
-      
-  
+        </Route>       
+      </Routes>     */}
     </>
   );  
 }

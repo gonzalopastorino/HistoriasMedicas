@@ -2,7 +2,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/dropdown';
 import "./SidebarMenuDos.css";
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+
+
 
 const SidebarMenuDos = () => {
   return (
@@ -60,10 +62,8 @@ const SidebarMenuDos = () => {
               </div>
             </div>
           </div>
-          <div className="col py-3">
-            Content area...
-          </div>
         </div>
+        <Outlet />
       </div>
 
     </>
