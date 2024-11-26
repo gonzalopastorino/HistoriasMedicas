@@ -1,5 +1,5 @@
 import "./landingPage.css"
-import ImageLandingPage from "../components/ImageLandingPage"
+//import ImageLandingPage from "../components/ImageLandingPage"
 
 
 
@@ -9,7 +9,8 @@ const LandingPage = () => {
     <>
     <header className="header-landing-page">
       <nav className="nav-landing-page container">
-          <h2 className="logo-landing-page">Historial Medico</h2>
+          <h2 className="logo-landing-page">Grupo 2</h2>
+
         <ul className="list-landing-page">
           <li className="item-landing-page"><a className="link-landing-page" href="#">Home</a></li>
         </ul>
@@ -18,13 +19,13 @@ const LandingPage = () => {
 
       <section className="main-landing-page container">
         <div className="texts-landing-page">
-          <h1 className="title-landing-page">Hola!, el Grupo 2 te da la Bienvenida!</h1>
-          <p className="subtitle-landing-page">La mejor aplicacion para la gestion de Historial Medico</p>
+          <h1 className="title-landing-page">Hola!, Bienvenido!</h1>
+          <p className="subtitle-landing-page">A la mejor aplicacion para la gestion de Historial Medico</p>
           <button className="cta-landing-page">Entra ya!</button>
         </div>
 
         <figure className="figure-langing-page">
-          <ImageLandingPage />
+          <img className="img-landing-page" src="./src/uttils/undraw_doctors_p6aq.svg" alt="image-doctors" />
         </figure>
 
       </section>
