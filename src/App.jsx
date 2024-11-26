@@ -1,6 +1,5 @@
-//import { Routes, Route } from "react-router-dom";  
+//import { Routes, Route, Router } from "react-router-dom";  
 //import SidebarMenuDos from "./components/SidebarMenuDos";
-
 import LandingPage from "./pages/LandingPage";
 import "./pages/landingPage.css"
 
@@ -10,12 +9,12 @@ function App() {
 
   return (
     <>
+    {/* <Router>
+      <Routes>
+        <Route></Route>
+      </Routes>
+    </Router> */}
     <LandingPage />
-      {/* <Routes>
-        <Route path="/home" element={<SidebarMenuDos />}>
-
-        </Route>       
-      </Routes>     */}
     </>
   );  
 }

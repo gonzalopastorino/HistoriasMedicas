@@ -20,7 +20,7 @@ const LandingPage = () => {
       <section className="main-landing-page container">
         <div className="texts-landing-page">
           <h1 className="title-landing-page">Hola!, Bienvenido!</h1>
-          <p className="subtitle-landing-page">A la mejor aplicacion para la gestion de Historial Medico</p>
+          <p className="subtitle-landing-page">A la mejor aplicación para la gestion de Historial Medico</p>
           <button className="cta-landing-page">Entra ya!</button>
         </div>
 
@@ -31,7 +31,7 @@ const LandingPage = () => {
       </section>
         
         <div className="wave-landing-page">
-          <img className="wave-landing-page-end" src="./src/uttils/wave.svg" alt="" />
+          <img className="wave-landing-page-end" src="./src/uttils/wave.svg" alt="wave" />
         </div>
     </header>
       
