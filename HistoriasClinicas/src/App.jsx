@@ -10,6 +10,11 @@ function App() {
   const [vistaActiva, setVistaActiva] = useState("registrarse");
   const [usuario, setUsuario] = useState(null); // Estado para guardar el usuario logueado
 
+  const handleCerrarSesion = () => {
+    setUsuario(null); // Limpia el usuario
+    setVistaActiva("login"); // Redirige a la vista de inicio de sesión
+  };
+
   const renderContenido = () => {
     switch (vistaActiva) {
       case "registrarse":
@@ -39,15 +44,13 @@ function App() {
       case "registrar-pacientes":
         return (
           <div className="d-flex">
-            {/* SidebarMenu fijo a la izquierda */}
             <SidebarMenu
               onRegistrarPacientes={() => setVistaActiva("registrar-pacientes")}
               onChangeView={setVistaActiva}
             />
-            {/* Contenedor del contenido principal */}
             <div className="w-100">
               <header className="header bg-dark text-white d-flex align-items-center justify-content-between p-3">
-                {usuario && <Bienvenida usuario={usuario} />}
+                {usuario && <Bienvenida usuario={usuario} onCerrarSesion={handleCerrarSesion} />}
               </header>
               <div className="mx-auto" style={{ maxWidth: "600px" }}>
                 <h1 className="text-center mb-4">Registrar Pacientes</h1>
@@ -65,7 +68,7 @@ function App() {
             />
             <div className="w-100">
               <header className="header bg-dark text-white d-flex align-items-center justify-content-between p-3">
-                {usuario && <Bienvenida usuario={usuario} />}
+                {usuario && <Bienvenida usuario={usuario} onCerrarSesion={handleCerrarSesion} />}
               </header>
               <div className="text-center mt-5">
                 <h1>Bienvenido, {usuario?.nombre || "Usuario"}.</h1>

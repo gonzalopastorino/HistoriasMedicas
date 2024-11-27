@@ -17,7 +17,7 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                onChangeView("inicio"); // Cambiar vista a Inicio
+                onChangeView("inicio");
               }}
             >
               <i className="bi bi-house-door-fill text-white"></i>
@@ -39,7 +39,7 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
           {/* Pacientes con submenú */}
           <li className="nav-item text-white my-3 dropdown">
             <a
-              className="text-decoration-none text-white p-2 d-flex align-items-center dropdown-toggle"
+              className="text-decoration-none text-white p-2 d-flex align-items-center"
               href="#"
               id="pacientesDropdown"
               role="button"
@@ -48,9 +48,10 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
             >
               <i className="bi bi-people-fill text-white"></i>
               <span className="ms-3 d-none d-sm-inline">Pacientes</span>
+              <i className="bi bi-caret-right-fill ms-auto"></i>
             </a>
             <ul
-              className="dropdown-menu bg-dark text-white"
+              className="dropdown-menu dropdown-menu-end bg-dark text-white"
               aria-labelledby="pacientesDropdown"
             >
               <li>
@@ -59,7 +60,7 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    onRegistrarPacientes(); // Emitir evento para mostrar el formulario
+                    onRegistrarPacientes();
                   }}
                 >
                   Registrar Pacientes
@@ -121,22 +122,30 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
 
       {/* Usuario (Tócame) */}
       <div className="dropdown my-3">
-        <a
-          className="text-decoration-none text-white dropdown-toggle p-3"
+        <button
+          className="btn btn-dark d-flex align-items-center"
           type="button"
           id="triggerId"
           data-bs-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <i className="bi bi-person-circle"></i>
+          <i className="bi bi-person-circle fs-4"></i>
           <span className="ms-3 d-none d-sm-inline">Tócame</span>
-        </a>
-        <div className="dropdown-menu" aria-labelledby="triggerId">
-          <a className="dropdown-item" href="#">
+        </button>
+        <div
+          className="dropdown-menu dropdown-menu-end"
+          style={{ backgroundColor: "#000", color: "#fff" }}
+          aria-labelledby="triggerId"
+        >
+          <a className="dropdown-item text-white" href="#">
             Base de Datos
           </a>
-          <a className="dropdown-item disabled" href="#">
+          <a
+            className="dropdown-item text-white"
+            href="#"
+            style={{ backgroundColor: "#000" }}
+          >
             Perfil
           </a>
         </div>
