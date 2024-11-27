@@ -21,5 +21,5 @@
 
 ## Estado: en progreso...🚀
 
-### Cracion de Page, compuesta por tres componentes.
+### Creacion de Page, compuesta por tres componentes.
 >>>>>>> 18f1b093793008e58d94e69e109fd8842e5988c5
