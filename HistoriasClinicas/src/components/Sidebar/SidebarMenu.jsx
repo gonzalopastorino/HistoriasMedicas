@@ -1,3 +1,4 @@
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/js/dist/dropdown";
@@ -5,9 +6,10 @@ import "./SidebarMenu.css";
 
 const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
   return (
-    <div className="bg-dark col-auto col-md-2 min-vh-100 d-flex flex-column justify-content-between">
+    <div className="bg-dark col-auto col-md-2 min-vh-100 d-flex flex-column justify-content-between pt-5">
+      {/* Menú principal */}
       <div>
-        <ul className="nav nav-pills flex-column mt-3">
+        <ul className="nav nav-pills flex-column">
           {/* Inicio */}
           <li className="nav-item text-white my-3">
             <a
@@ -47,7 +49,10 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
               <i className="bi bi-people-fill text-white"></i>
               <span className="ms-3 d-none d-sm-inline">Pacientes</span>
             </a>
-            <ul className="dropdown-menu bg-dark text-white" aria-labelledby="pacientesDropdown">
+            <ul
+              className="dropdown-menu bg-dark text-white"
+              aria-labelledby="pacientesDropdown"
+            >
               <li>
                 <a
                   className="dropdown-item text-white"
