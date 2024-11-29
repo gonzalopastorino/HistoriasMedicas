@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Navbar.css"
 
 
@@ -14,8 +13,14 @@ const Navbar = () => {
         <a href='#' className="logo text-decoration-none text-white"></a>
       </div>
       <div className="inicio-boton-salir d-flex">
-      {/* <a href='/' className="inicio text-decoration-none text-white">Inicio</a> */}
-        <button className="btn btn-outline-info">Cerrar Secion</button>
+      <a 
+          href="/login" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="btn btn-outline-info"
+        >
+          Iniciar sesión
+        </a>
       </div>
     </nav>
     
@@ -23,4 +28,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar 
