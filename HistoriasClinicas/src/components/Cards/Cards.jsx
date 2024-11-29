@@ -2,9 +2,23 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Cards.css"
 
-const Cards = ({medico} ) => {
-  //console.log(medico)
+import PropTypes from 'prop-types';
 
+
+
+const Cards = ({medico} ) => {
+  console.log(medico)
+  
+  
+  Cards.propTypes = {
+    medico: PropTypes.shape({
+      nombre: PropTypes.string.isRequired,
+      apellido: PropTypes.string.isRequired,
+      especialidad: PropTypes.string.isRequired,
+      imagen: PropTypes.string.isRequired,
+    }).isRequired,
+  };
+  
 
   return (
     <div className="card-medico">

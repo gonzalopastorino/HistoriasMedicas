@@ -3,20 +3,21 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/js/dist/dropdown';
 import "./SidebarMenu.css";
 
+
 const SidebarMenu = () => {
   return (
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="bg-dark col-auto col-md-2 min-vh-100 justify-cpntent-between flex-column">
+          <div className="bg-dark col-auto col-md-2 min-vh-100 justify-content-between flex-column">
             <div>
-              <a className="text-decoration-none text-white d-none d-sm-inline d-flex align-items-center ms-1 mt-3">
+              {/* <a className="text-decoration-none text-white d-none d-sm-inline d-flex align-items-center ms-1 mt-3">
                 <i className="fs-5 bi bi-activity"></i>
                 <span className="ms-1 d-none d-sm-inline">Registro de Pacientes</span>
-              </a>
-              <hr className="text-secondary d-none d-sm-block"/>
+              </a> */}
               <ul className="nav nav-pills flex-column mt-3 mt-sm-0">
-                <li className="nav-item text-white my-3 py-sm-0">
+
+                <li className="nav-item text-white my-3 ">
                   <i className="bi bi-house-door-fill text-white "></i>
                   <a className="text-decoration-none text-white p-2" href="#" aria-current="page">
                     <span className="ms-3 d-none d-sm-inline">Inicio</span>
@@ -29,7 +30,7 @@ const SidebarMenu = () => {
                   </a>
                 </li>
                 <li className="nav-item text-white my-3">
-                  <i className="bi bi-people-fill text-white"></i>
+                  <i className="bi bi-people text-white"></i>
                   <a className="text-decoration-none text-white p-2" href="#" aria-current="page">
                   <span className="ms-3 d-none d-sm-inline">Pacientes</span>
                   </a>
@@ -52,12 +53,12 @@ const SidebarMenu = () => {
                   <span className="ms-3 d-none d-sm-inline">Calendario</span>
                   </a>
                 </li>
-                <li className="nav-item text-white my-3 ">
+                {/* <li className="nav-item text-white my-3 ">
                   <i className="bi bi-gear text-white "></i>
                   <a className="text-decoration-none text-white p-2" href="#" aria-current="page">
                   <span className="ms-3 d-none d-sm-inline">Configuracion</span>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
             

@@ -1,11 +1,15 @@
-import PatientsProvider from "./components/Context/patientsProvider";
-import PacientesForm from "./components/PacientesForm";
-import PacientesLista from "./components/PacientesLista";
-import SidebarMenu from "./components/Sidebar/SidebarMenu";
-import TablaPacientes from "./components/TablaPacientes";
-import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";  
 
-import "bootstrap/dist/css/bootstrap.min.css";
+//import SidebarMenuDos from "./components/SidebarMenuDos";
+import LandingPage from "./pages/LandingPage";
+import Home from "./pages/Home";
+import "./pages/landingPage.css"
+import InfoLandingPage from "./components/InfoLandingPage";
+import Navbar from "./components/Navbar/Navbar";
+import "../src/components/Navbar/Navbar.css"
+//import Grid from "./components/Grid/Grid"
+import "../src/components/Grid/grid.css"
+
 
 
 
@@ -14,17 +18,22 @@ function App() {
 
   return (
     <>
-    <PatientsProvider>
-      <Navbar />
-      <h2>Arranco!!</h2>
-      <h1>Demo Manejo de Pacientes</h1>
-      <PacientesForm />
-      <PacientesLista />
-      <SidebarMenu />
-    </PatientsProvider>
-    <TablaPacientes />  
+    <Navbar />  
+    
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/informacion" element={<InfoLandingPage />} />
+
+    </Routes>
+    
+    
+    </BrowserRouter>
+
+
     </>
-  );
+  );  
 }
 
 export default App;

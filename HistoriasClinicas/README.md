@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Historial Medico proyect <Grupo 3 />
 
 ## Se encuentra en estapa inicial de desarrollo. Recientemente generamos Formulario de registro para nuestro demo. 
@@ -15,3 +16,10 @@
 ##CONTINUARA...
 
 
+=======
+# Historias Medicas.
+
+## Estado: en progreso...🚀
+
+### Creacion de Page, compuesta por tres componentes.
+>>>>>>> 18f1b093793008e58d94e69e109fd8842e5988c5
