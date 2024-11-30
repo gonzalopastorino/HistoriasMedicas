@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import "./pages/landingPage.css"
 import InfoLandingPage from "./components/InfoLandingPage";
-import Navbar from "./components/Navbar/Navbar";
+//import Navbar from "./components/Navbar/Navbar";
 import "../src/components/Navbar/Navbar.css"
 //import Grid from "./components/Grid/Grid"
 import "../src/components/Grid/grid.css"
@@ -18,9 +18,11 @@ function App() {
 
   return (
     <>
-    <Navbar />  
+
+    <InfoLandingPage />
+    {/* <Navbar />   */}
     
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/home" element={<Home />} />
@@ -29,7 +31,7 @@ function App() {
     </Routes>
     
     
-    </BrowserRouter>
+    </BrowserRouter> */}
 
 
     </>
