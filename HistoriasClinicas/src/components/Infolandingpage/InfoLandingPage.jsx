@@ -64,16 +64,15 @@ const InfoLandingPage = () => {
             alt="image-task"
           />
         </figure>
-      </div>
-
-      <div id="registrarse">
-        <Registrarse />
-      </div>
-
       <div className="wave-info-landing-page">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320">
           <path fill="#fff" d="M0,192L1440,288L1440,320L0,320Z"></path>
         </svg>
+      </div>
+      </div>
+
+      <div id="registrarse">
+        <Registrarse />
       </div>
     </>
   );
