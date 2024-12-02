@@ -28,13 +28,13 @@ const Registrarse = ({ onCambiarVista }) => {
       <div className="formulario-contenedor">
         <div className="form-input-group">
           <label htmlFor="nombre" className="form-label">
-            {/* Nombre: */}
+            Nombre:
           </label>
           <input
             type="text"
             id="nombre"
             className="form-control"
-            placeholder="Nombre"
+            placeholder=""
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
           />
@@ -42,13 +42,13 @@ const Registrarse = ({ onCambiarVista }) => {
 
         <div className="form-input-group">
           <label htmlFor="email" className="form-label">
-            {/* Email: */}
+            Email:
           </label>
           <input
             type="email"
             id="email"
             className="form-control"
-            placeholder="Email"
+            placeholder=""
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -56,13 +56,13 @@ const Registrarse = ({ onCambiarVista }) => {
 
         <div className="form-input-group">
           <label htmlFor="password" className="form-label">
-            {/* Contraseña: */}
+            Contraseña:
           </label>
           <input
             type="password"
             id="password"
             className="form-control"
-            placeholder="Contraseña"
+            placeholder=""
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

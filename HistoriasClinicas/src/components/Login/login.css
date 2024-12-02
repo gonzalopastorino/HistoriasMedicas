@@ -27,6 +27,7 @@
     box-shadow: 0 5px 10px -5px rgba(255, 255, 255, 0.3);
     border: 1px solid #dddbdb;
     text-align: center;
+    
     /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
@@ -67,7 +68,7 @@
 }
 
 input::placeholder {
-    color: #e4e4e1;
+    color: #cccbc9;
 }
 
 
