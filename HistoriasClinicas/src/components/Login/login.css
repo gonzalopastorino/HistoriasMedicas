@@ -26,26 +26,50 @@
     border-radius: 5px;
     box-shadow: 0 5px 10px -5px rgba(255, 255, 255, 0.3);
     border: 1px solid #dddbdb;
-    text-align: center;;
+    text-align: center;
     /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .form-loguin-input-group {
     position: relative;
     color: #fff;
+    /* margin-bottom: 1rem;
+    padding: 2rem 1rem 1rem 1rem; */
+}
+.input-control-loguin {
+    width: 100%;
     margin-bottom: 1rem;
+    background: none;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    padding: 1rem 0.5rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.form-loguin-label {
+.label-loguin {
     color: #fff;
-    /* cursor: pointer; */
+    cursor: pointer; 
     position: absolute;
-    top: 0;
+    top: 0; 
     left: 1rem;
     font-weight: 200;
     text-align: right;
     margin-right: 1rem; 
+
+    transform: translateY(1.5rem);
+    transition: transform 0.5s, color 0.3s;
 }
+
+input::placeholder {
+    color: #e4e4e1;
+}
+
 
 .form-control-loguin {
     width: 100%;
@@ -62,6 +86,7 @@
     border-radius: 5px;
 }
 
+
 .buton-loguin-iniciar-sesion {
     background: #2a5298;
     color: #fff;
@@ -77,6 +102,7 @@
 .buton-loguin-iniciar-sesion:hover {
     background: #fff;
     color: #2a5298;
+    font-weight: bold;
     transition: background-color 0.5s ease-in-out;
 }
 
@@ -107,6 +133,7 @@
 .button-registo-loguin:hover {
     background: #fff;
     color: #2a5298;
+    font-weight: bold;
     transition: background-color 0.5s ease-in-out;
 }
 

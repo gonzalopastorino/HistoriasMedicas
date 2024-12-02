@@ -37,28 +37,28 @@ const Login = ({ onLoginExitoso }) => {
       <h3 className="form-loguin-title">Iniciar Sesión</h3>
 
         <div className="form-loguin-input-group">
-          <label htmlFor="email" className="form-loguin-label">
-            Email:
+          <label htmlFor="email" className="label-loguin">
+            {/* Email: */}
           </label>
           <input
             type="email"
             id="email"
-            className="form-control-loguin"
-            placeholder=""
+            className="input-control-loguin"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
         <div className="form-loguin-input-group">
-          <label htmlFor="password" className="form-loguin-label">
-            Contraseña:
+          <label htmlFor="password" className="label-loguin">
+            {/* Contraseña: */}
           </label>
           <input
             type="password"
             id="password"
-            className="form-control-loguin"
-            placeholder=""
+            className="input-control-loguin"
+            placeholder="Contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

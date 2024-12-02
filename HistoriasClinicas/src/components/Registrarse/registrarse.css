@@ -41,6 +41,9 @@
     position: relative;
     color: #fff;
 }
+input::placeholder {
+    color: #ffffff;
+}
 
 .form-control {
     width: 100%;
@@ -66,14 +69,18 @@
 /* Estilo para los labels */
 .form-label {
     color: #fff;
-    /* cursor: pointer; */
+    cursor: pointer; 
     position: absolute;
     top: 0;
     left: 1rem;
     font-weight: 200;
     text-align: right;
     margin-right: 1rem; 
+    transform: translateY(1.5rem); /*ojo con estas dos propiedades*/
+    transition: transform 0.5s, color 0.3s;
 }
+
+
 
 
 /* Estilo de boto registrarse */
