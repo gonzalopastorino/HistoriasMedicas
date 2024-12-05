@@ -1,4 +1,3 @@
-
 # Historial Medico proyect <Grupo 3 />
 
 ## Se encuentra en estapa inicial de desarrollo. Recientemente generamos Formulario de registro para nuestro demo. 
@@ -15,5 +14,4 @@
 
 ##CONTINUARA...
 
-#### Falta, pero va tomando forma y muy contento con lo logrado hasta el momento. Un cosito a la vez, ya falta menos. Perdon por tan poco, prometemos mejorar. 👌
 
