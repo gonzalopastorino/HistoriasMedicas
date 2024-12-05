@@ -1,5 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import DataTable from "react-data-table-component"
 import { useState, useEffect } from "react";
+
+
 
 //React Data Table Component
 const TablaPacientes = () => {
@@ -169,7 +172,6 @@ const TablaPacientes = () => {
         pagination
         fixedHeader
         progressPending={loading}
-        //progressComponent={loader}  falta implementar
         
         />     
     </div>    

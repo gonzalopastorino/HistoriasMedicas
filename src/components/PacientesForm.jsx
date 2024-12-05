@@ -18,9 +18,7 @@ const PacientesForm = ({agregarPaciente, editandoPaciente}) => {
 
 
 
-
   const handleSubmit = (e) => {
-    e.preventDefault();
     const paciente = { name, apellido, edad, diagnostico };
     agregarPaciente(paciente, edad, diagnostico);
     setName("");
@@ -36,10 +34,11 @@ const PacientesForm = ({agregarPaciente, editandoPaciente}) => {
   // }, [agregarPaciente]);
 
   return (
+    
     <form onSubmit={handleSubmit} className="mb-3">
       <div className="mb-3">
         <label className="form-label">Nombre</label>
-        <input type="text" className="form-control" placeholder="Nombre del paciente" value={name} onChange={(e) => setName(e.target.value)} required />  
+        <input type="text" className="form-control" placeholder="Nombre del paciente" value={name} onChange={(e) => setName(e.target.value)} id="name" required />  
       </div>
 
       <div className="mb-3">
