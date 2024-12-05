@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./landingPage.css";
 
 const LandingPage = () => {
@@ -16,16 +16,16 @@ const LandingPage = () => {
 
           <ul className="list-landing-page">
             <li className="item-landing-page">
-              <a className="link-landing-page" href="/">
+              <Link className="link-landing-page" href="/">
                 Home
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
 
         <section className="main-landing-page container">
           <div className="texts-landing-page">
-            <h1 className="title-landing-page">Hola!, Bienvenido!</h1>
+            <h3 className="title-landing-page">Hola!, Bienvenido!</h3>
             <p className="subtitle-landing-page">
               A la mejor aplicación para la gestión de Historial Médico
             </p>
