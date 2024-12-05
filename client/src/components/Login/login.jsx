@@ -1,65 +1,61 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import { useAuth } from "../Context/AuthContext";
+import {useForm} from 'react-hook-form'
+import { useEffect } from "react";
+import { Link,useNavigate } from "react-router-dom";
 import "./login.css";
 
-const Login = ({ onLoginExitoso }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Inicializa useNavigate
+const Login = () => {
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    const usuarioRegistrado = JSON.parse(localStorage.getItem("usuario"));
-
-    if (usuarioRegistrado) {
-      if (email === usuarioRegistrado.email && password === usuarioRegistrado.password) {
-        alert(`Bienvenido, ${usuarioRegistrado.nombre}`);
-        onLoginExitoso(usuarioRegistrado); // Enviamos el usuario al componente principal
-      } else {
-        alert("Contraseña incorrecta");
-      }
-    } else {
-      alert("Usuario no registrado");
+  const {register,handleSubmit,formState:{errors}}=useForm()
+  const {signin, errors: signinErrors} =useAuth();
+  const onSubmit= handleSubmit(data=>{
+    signin(data)
+  })
+  const {user,isAuthenticated}=useAuth()
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/bienvenida"); // Ruta absoluta
     }
-  };
-
-  // Navega a la página de InfoLandingPage
-  const handleNavigateToInfo = () => {
-    navigate("/informacion#registrarse"); 
-  };
-
+  }, [isAuthenticated]);
+  
   return (
     <div className="form">
       <h3 className="inicios">Iniciar Sesión</h3>
-      <form onSubmit={handleLogin} className="formulario">
-        <div className="input-group">
-          <label htmlFor="email" className="form-label">
-            Email:
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="form-control"
-            placeholder="Ingrese su email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+      {signinErrors.map((error, i) => (
+          <div className="errores-registro" key={i}>
+            {error}
+          </div>
+        ))}
+      <form onSubmit={onSubmit} className="formulario">
+      <div className="form-input-group">
+              <input
+                type="email"
+                placeholder="Email"
+                {...register("email", { required: true })}
+                className="form-control"
+              />
+              {errors.email && (
+                <p className="text-red-500 mensaje-error">
+                  El email es requerido
+                </p>
+              )}
+            </div>
 
-        <div className="input-group">
-          <label htmlFor="password" className="form-label">
-            Contraseña:
-          </label>
-          <input
-            type="password"
-            id="password"
-            className="form-control"
-            placeholder="Ingrese su contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+            <div className="form-input-group">
+              <input
+                type="password"
+                placeholder="Contraseña"
+                {...register("password", { required: true })}
+                className="form-control"
+              />
+              {errors.password && (
+                <p className="text-red-500 mensaje-error">
+                  La contraseña es requerida
+                </p>
+              )}
+            </div>
 
         <button type="submit" className="btn btn-success mt-3">
           Iniciar Sesión
@@ -67,8 +63,8 @@ const Login = ({ onLoginExitoso }) => {
       </form>
       <div className="registrarse mt-4">
         <p>¿No tienes una cuenta?</p>
-        <button onClick={handleNavigateToInfo} className="btn btn-primary">
-          Registrarse
+        <button className="btn btn-primary">
+          <Link className="registrate" to='../informacion#registrarse'>Registrate</Link>
         </button>
       </div>
     </div>

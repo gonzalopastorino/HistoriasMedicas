@@ -16,6 +16,12 @@
     text-align: center;
 }
 
+.registrate{
+    text-decoration: none;
+    color: white;
+    
+}
+
 .formulario {
     display: flex;
     flex-direction: column;

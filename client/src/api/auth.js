@@ -6,4 +6,5 @@ const API = 'http://localhost:3000/medico';
 
 export const registerRequest = (user)=> axios.post(`${API}/registrarse`,user)
 
+export const loginRequest = async (user) => axios.post(`${API}/login`, user);
 

@@ -7,6 +7,7 @@ const router= Router();
 
 router.post('/registrarse', validateSchema(registerSchema), registrarse)
 router.post('/login', validateSchema(loginSchema), login)
+router.get('/bienvenida', authRequired)
 router.post('/logout', logout)
 router.get('/profile', authRequired, profile)
 

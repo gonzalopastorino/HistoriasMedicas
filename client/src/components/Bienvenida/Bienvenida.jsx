@@ -1,9 +1,21 @@
 import React from "react";
 
-const Bienvenida = ({ usuario, onCerrarSesion }) => {
+const Bienvenida = () => {
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>¡Bienvenido a la aplicación!</h1>
+      <p>Estamos felices de verte aquí.</p>
+    </div>
+  );
+};
+
+export default Bienvenida;
+
+
+/*const Bienvenida = ({ usuario, onCerrarSesion }) => {
   return (
     <div className="dropdown ms-auto">
-      {/* Botón solo con la imagen */}
+      {/* Botón solo con la imagen }
       <button
         className="btn btn-dark d-flex align-items-center"
         type="button"
@@ -15,9 +27,9 @@ const Bienvenida = ({ usuario, onCerrarSesion }) => {
         <i className="bi bi-person-circle fs-4"></i>
       </button>
 
-      {/* Menú desplegable personalizado */}
-      <ul
-        className="dropdown-menu dropdown-menu-end"
+      {/* Menú desplegable personalizado *///}
+     // <ul
+       /* className="dropdown-menu dropdown-menu-end"
         aria-labelledby="dropdownMenuButton"
         style={{ backgroundColor: "#000", color: "#fff" }}
       >
@@ -35,4 +47,6 @@ const Bienvenida = ({ usuario, onCerrarSesion }) => {
   );
 };
 
-export default Bienvenida;
+export default Bienvenida;*/
+
+
