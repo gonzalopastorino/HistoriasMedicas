@@ -10,7 +10,7 @@ const InfoLandingPage = () => {
   //};
 
   return (
-    <>InfoLandingPage
+    <>
 
 <header className="header-info-landing-page">
         <nav className="nav-info-landing-page container">
