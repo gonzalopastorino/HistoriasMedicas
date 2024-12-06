@@ -1,122 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
-  line-height: 1.6;
-}
-
-.content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 2rem;
-  overflow: hidden;
-}
-
-/* Sectión */
-.informacion-landing-page {
-  background-image: linear-gradient(to top, #1e3c72 0%, #2a5298 100%);
-  color: #fff;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
-  gap: 2rem;
-  min-height: 100vh;
-  padding: 2rem 0 0 0;
-}
-
-/* Texto info */
+/* Encapsulamos los estilos con .info-landing-page */
 .info-landing-page {
-  grid-column: span 7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.title-info-landing-page {
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
-}
-
-.paragraph-info-landing-page {
-  font-size: 1rem;
-  font-weight: 300;
-  margin-top: 1rem;
-  line-height: 1.8;
-}
-
-/* Figure */
-.figure-landing-page {
-  grid-column: span 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-
-.img-landing-page {
-  max-width: 100%;
-  height: auto;
-}
-
-/* wave SVG */
-.wave-info-landing-page {
-  grid-column: span 12;
-  width: 100%;
-  /* margin-top: 2rem; */
-}
-
-.wave-info-landing-page svg {
-  display: block;
-  width: 100%;
-  /* height: auto; */
-  align-self: end;
-}
-
-.link-landing-page {
-  position: relative;
-  bottom: 100px;
-}
-
-/* Medias */
-@media (max-width: 768px) {
-  .informacion-landing-page {
-    grid-template-columns: 1fr;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
   }
-
-  .info-landing-page, .figure-landing-page {
-    grid-column: span 12;
-  }
-
-  .title-info-landing-page {
-    font-size: 2rem;
-  }
-
-  .paragraph-info-landing-page {
-    font-size: 0.9rem;
-  }
-
-  .img-landing-page {
-    width: 80%;
-  }
-
   
-  .link-landing-page {
-    position: relative;
-    bottom: 10px;  
-    font-size: 1rem;  
-    text-align: center;  
+  .info-landing-page .informacion-landing-page {
+    background-image: linear-gradient(to top, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+    min-height: 100vh;
+    padding: 2rem 0 0 0;
   }
-}
+  
+  .info-landing-page .info-landing-page-content {
+    grid-column: span 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .info-landing-page .title-info-landing-page {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  
+  .info-landing-page .paragraph-info-landing-page {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    line-height: 1.8;
+  }
+  
+  .info-landing-page .figure-landing-page {
+    grid-column: span 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .info-landing-page .img-landing-page {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .info-landing-page .wave-info-landing-page {
+    grid-column: span 12;
+    width: 100%;
+  }
+  
+  .info-landing-page .wave-info-landing-page svg {
+    display: block;
+    width: 100%;
+    align-self: end;
+  }
+  
+  .info-landing-page .link-landing-page {
+    position: relative;
+    bottom: 100px;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .info-landing-page .informacion-landing-page {
+      grid-template-columns: 1fr;
+    }
+  
+    .info-landing-page .info-landing-page-content,
+    .info-landing-page .figure-landing-page {
+      grid-column: span 12;
+    }
+  
+    .info-landing-page .title-info-landing-page {
+      font-size: 2rem;
+    }
+  
+    .info-landing-page .paragraph-info-landing-page {
+      font-size: 0.9rem;
+    }
+  
+    .info-landing-page .img-landing-page {
+      width: 80%;
+    }
+  
+    .info-landing-page .link-landing-page {
+      position: relative;
+      bottom: 10px;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  

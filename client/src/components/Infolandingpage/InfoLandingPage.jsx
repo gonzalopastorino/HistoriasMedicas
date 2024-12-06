@@ -11,7 +11,8 @@ const InfoLandingPage = () => {
       if (registrarseSection) {
         const scrollToElement = (element, duration) => {
           const start = window.scrollY;
-          const targetPosition = element.getBoundingClientRect().top + window.scrollY;
+          const targetPosition =
+            element.getBoundingClientRect().top + window.scrollY;
           const distance = targetPosition - start;
           let startTime = null;
 
@@ -35,10 +36,9 @@ const InfoLandingPage = () => {
   }, []);
 
   return (
-    <>
+    <div className="info-landing-page">
       <div className="informacion-landing-page">
-        <section className="info-landing-page content">
-          {/* Enlace Grupo 2 arriba del título */}
+        <section className="info-landing-page-content">
           <h2 className="logo-landing-page">
             <Link to="/" className="link-landing-page">
               Grupo 2
@@ -64,17 +64,17 @@ const InfoLandingPage = () => {
             alt="image-task"
           />
         </figure>
-      <div className="wave-info-landing-page">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320">
-          <path fill="#fff" d="M0,192L1440,288L1440,320L0,320Z"></path>
-        </svg>
-      </div>
+        <div className="wave-info-landing-page">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320">
+            <path fill="#fff" d="M0,192L1440,288L1440,320L0,320Z"></path>
+          </svg>
+        </div>
       </div>
 
       <div id="registrarse">
         <Registrarse />
       </div>
-    </>
+    </div>
   );
 };
 

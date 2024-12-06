@@ -1,57 +1,74 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import InfoLandingPage from "./components/Infolandingpage/InfoLandingPage";
-import Navbar from "./components/Navbar/Navbar";
-import Login from "./components/Login/login"; 
-import Bienvenida from './components/Bienvenida/Bienvenida'
-import "./pages/landingPage.css";
-import "../src/components/Navbar/Navbar.css";
-import "../src/components/Grid/grid.css";
+import Login from "./components/Login/login";
+import Bienvenida from "./components/Bienvenida/Bienvenida";
+import DefaultLayout from "../DefaultLayout";
+import NoNavbarLayout from "./NoNavbarLayout";
 import { AuthProvoder } from "./components/Context/AuthContext";
 import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
-  const location = useLocation();
-
   return (
-    <>
-      {location.pathname !== "/login" && <Navbar />}
-     
-      <AuthProvoder>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/informacion" element={<InfoLandingPage />} />
-          <Route path="/login" element={<Login />} /> 
-          <Route element={<ProtectedRoute/>}>
-        <Route path="/bienvenida" element={<Bienvenida/>}/>
-        </Route>
-        </Routes>
-       
-      </AuthProvoder>
-    </>
+    <AuthProvoder>
+      <Routes>
+        {/* Rutas con barra de navegación */}
+        <Route
+          path="/"
+          element={
+            <DefaultLayout>
+              <LandingPage />
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <DefaultLayout>
+              <Home />
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/informacion"
+          element={
+            <DefaultLayout>
+              <InfoLandingPage />
+            </DefaultLayout>
+          }
+        />
+
+        {/* Rutas sin barra de navegación */}
+        <Route
+          path="/login"
+          element={
+            <NoNavbarLayout>
+              <Login />
+            </NoNavbarLayout>
+          }
+        />
+        <Route
+          path="/bienvenida"
+          element={
+            
+              <NoNavbarLayout>
+                <Bienvenida />
+              </NoNavbarLayout>
+            
+          }
+        />
+      </Routes>
+    </AuthProvoder>
   );
 }
 
 function RootApp() {
   return (
-    <BrowserRouter
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    >
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   );
 }
-
-const NoNavbarLayout = ({ children }) => {
-  return <div>{children}</div>;
-};
-
-
-
 
 export default RootApp;
