@@ -4,71 +4,33 @@ import Home from "./pages/Home";
 import InfoLandingPage from "./components/Infolandingpage/InfoLandingPage";
 import Login from "./components/Login/login";
 import Bienvenida from "./components/Bienvenida/Bienvenida";
-import DefaultLayout from "../DefaultLayout";
-import NoNavbarLayout from "./NoNavbarLayout";
 import { AuthProvoder } from "./components/Context/AuthContext";
 import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
     <AuthProvoder>
+       <BrowserRouter>
       <Routes>
-        {/* Rutas con barra de navegación */}
-        <Route
-          path="/"
-          element={
-            <DefaultLayout>
-              <LandingPage />
-            </DefaultLayout>
-          }
-        />
-        <Route
-          path="/home"
-          element={
-            <DefaultLayout>
-              <Home />
-            </DefaultLayout>
-          }
-        />
-        <Route
-          path="/informacion"
-          element={
-            <DefaultLayout>
-              <InfoLandingPage />
-            </DefaultLayout>
-          }
-        />
+        
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/informacion" element={<InfoLandingPage />} />
+        <Route path="/login" element={<Login />} />
 
-        {/* Rutas sin barra de navegación */}
-        <Route
-          path="/login"
-          element={
-            <NoNavbarLayout>
-              <Login />
-            </NoNavbarLayout>
-          }
-        />
-        <Route
-          path="/bienvenida"
-          element={
+     
+        <Route element={<ProtectedRoute/>}>
+         <Route path="/bienvenida" element={<Bienvenida/>}/>
+         
             
-              <NoNavbarLayout>
-                <Bienvenida />
-              </NoNavbarLayout>
-            
-          }
-        />
+          
+        </Route>
       </Routes>
+      </BrowserRouter>
     </AuthProvoder>
   );
 }
 
-function RootApp() {
-  return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  );
-}
 
-export default RootApp;
+
+export default App;

@@ -4,7 +4,9 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/js/dist/dropdown";  
 import "./SidebarMenu.css";  
 
+
 const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {  
+  
   return (  
     <div className="bg-dark col-auto col-md-2 min-vh-100 d-flex flex-column justify-content-between pt-5">  
       {/* Menú principal */}  
