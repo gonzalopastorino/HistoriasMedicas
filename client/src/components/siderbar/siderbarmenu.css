@@ -1,0 +1,12 @@
+ul {
+    text-decoration: none;
+  }
+  .my-3:hover {
+    background-color: #61276a;
+  }
+  
+  /* SidebarMenu.css */  
+  .dropdown-item:hover {  
+    background-color: #61276a; /* Cambia el fondo a violeta */  
+    color: white; /* Y el texto a blanco para contraste */  
+  }  

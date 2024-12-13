@@ -1,30 +1,34 @@
-import PatientsProvider from "./components/Context/patientsProvider";
-import PacientesForm from "./components/PacientesForm";
-import PacientesLista from "./components/PacientesLista";
-import SidebarMenu from "./components/Sidebar/SidebarMenu";
-import TablaPacientes from "./components/TablaPacientes";
-import Navbar from "./components/Navbar/Navbar";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import InfoLandingPage from "./pages/infolandingpage/InfoLandingPage";
+import LoginPage from "./pages/loginPage/LoginPage"
+import { AuthProvoder } from "./components/Context/AuthContext";
+import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
+import BienvenidaPage from "./pages/bienvenidapage/BienvenidaPage";
 
 function App() {
-  
-
   return (
-    <>
-    <PatientsProvider>
-      <Navbar />
-      <h2>Arranco!!</h2>
-      <h1>Demo Manejo de Pacientes</h1>
-      <PacientesForm />
-      <PacientesLista />
-      <SidebarMenu />
-    </PatientsProvider>
-    <TablaPacientes />  
-    </>
+    <AuthProvoder>
+       <BrowserRouter>
+      <Routes>
+        
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/informacion" element={<InfoLandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+
+     
+        <Route element={<ProtectedRoute/>}>
+         <Route path="/bienvenida" element={<BienvenidaPage/>}/>
+         
+            
+          
+        </Route>
+      </Routes>
+      </BrowserRouter>
+    </AuthProvoder>
   );
 }
+
+
 
 export default App;

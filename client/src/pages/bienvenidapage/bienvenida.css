@@ -1,0 +1,36 @@
+.bienvenido-text {
+    font-size: 1.2em; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    margin-right: 10px; /* Espaciado entre el texto y el ícono */
+    color: #fff; /* Color del texto */
+  }
+  
+  .dropdown button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: #fff; /* Color del ícono */
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdown-menu {
+    background-color: #000; /* Fondo oscuro del menú */
+    color: #fff; /* Texto blanco */
+  }
+  
+  .dropdown-menu .dropdown-item {
+    color: #fff; /* Texto blanco */
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #61276a; /* Fondo violeta al pasar el mouse */
+  }
+  
+  .navbar .d-flex.align-items-center {
+    margin-left: auto; /* Empuja todo el contenido hacia la derecha */
+  }
+  
+  /* Aumentar el tamaño del ícono */
+  .dropdown button i {
+    font-size: 2.3em !important; /* Aumentar tamaño del ícono con !important */
+  }
