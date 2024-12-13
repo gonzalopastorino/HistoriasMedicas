@@ -1,0 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ilustration{
+  display: block;
+  width: 30%;
+  margin: 60px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+/* CONTINUAR ESTILOS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 88px;
+  
+}
+
+.informacion-landing-page {
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  min-height: 100vh;
+}
+
+.info-landing-page content {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+
+  /* padding-bottom: 150px; */
+  align-items: center;
+}
+
+.title-info-landing-page {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.paragraph-info-landing-page {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.figure-landing-page {
+  width: 100%;
+}
+
+.wave-info-landing-page {
+  align-self: end;
+  width: 100%;
+}
+
+.ilustration-info-landinf-page{
+  display: block;
+  width: 30%;
+  
+}
+
+

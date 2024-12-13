@@ -11,7 +11,7 @@
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
-  /* margin-top: 88px; */
+  margin-top: 88px;
 }
 
 .header-landing-page{
@@ -100,7 +100,8 @@
   color: #fff;
   padding: 1rem 3rem;
   border: 1px solid;
-  border-radius: 5px;display: inline-block;
+  border-radius: 5px;
+  display: inline-block;
   font-weight: 500;
   letter-spacing: 1px;
 }

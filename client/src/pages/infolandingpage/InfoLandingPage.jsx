@@ -8,32 +8,9 @@ const InfoLandingPage = () => {
     const hash = window.location.hash;
     if (hash === "#registrarse") {
       const registrarseSection = document.getElementById("registrarse");
-      if (registrarseSection) {
-        const scrollToElement = (element, duration) => {
-          const start = window.scrollY;
-          const targetPosition =
-            element.getBoundingClientRect().top + window.scrollY;
-          const distance = targetPosition - start;
-          let startTime = null;
-
-          const animation = (currentTime) => {
-            if (!startTime) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / duration, 1);
-            window.scrollTo(0, start + distance * progress);
-
-            if (timeElapsed < duration) {
-              requestAnimationFrame(animation);
-            }
-          };
-
-          requestAnimationFrame(animation);
-        };
-
-        scrollToElement(registrarseSection, 1000);
-      }
+     
     }
-  }, []);
+  })
 
   return (
     <div className="info-landing-page">
