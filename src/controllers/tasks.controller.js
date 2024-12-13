@@ -18,7 +18,7 @@ export const createTask= async (req,res) =>{
     res.json(savedTask);
 };
 export const getTask= async (req,res) =>{
-   const task= await Task.findById(req.params.id).populate('user')
+    const task= await Task.findById(req.params.id).populate('user')
     if(!task) return res.status(404).json({message: 'Tarea no encontrada'})
     res.json(task)
 

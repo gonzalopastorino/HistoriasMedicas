@@ -15,10 +15,11 @@ export const registrarse = async (req,res) => {
         username,
         email,
         password: passwordHash,
+        role: 'admin',
     })
 
    const userSaved= await newUser.save();
-  const token = await createAccesToken({id: userSaved._id});
+  const token = await createAccesToken({id: userSaved._id, role: userSaved.role});
     res.cookie('token',token);
    
     
@@ -27,6 +28,7 @@ export const registrarse = async (req,res) => {
         id: userSaved._id,
         username: userSaved.username,
         email: userSaved.email,
+        role: userSaved.role,
         createdAt: userSaved.createdAt,
         updatedAt: userSaved.updatedAt,
     })
