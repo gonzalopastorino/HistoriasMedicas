@@ -11,7 +11,6 @@
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
-  margin-top: 88px;
 }
 
 .header-landing-page{
@@ -37,10 +36,12 @@
   gap: 1rem;
   align-items: center;
   height: 90px;
+
 }
 
 .list-landing-page {
   list-style: none;
+
 }
 
 .link-landing-page {
@@ -49,15 +50,15 @@
 }
 
 .link-landing-page:hover {
-  transition: color 0.5s ease-in-out;
+  transform: color 0.5s ease-in-out;
   color: #f0f2f6;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   transition: 0.5s ease-in-out;
 }
 
 .item-landing-page {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   font-weight: 300;
 }
 
@@ -67,7 +68,7 @@
   font-weight: 300;
 }
 
-/* section-landing-page-conteiner */
+/* section-landing-page-container */
 
 .main-landing-page {
   grid-area: contenido;
@@ -75,7 +76,8 @@
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
 
-  padding-bottom: 150px;
+  margin-top: 3rem;
+  padding-bottom: 350px;
   align-items: center;
 }
 
@@ -95,6 +97,7 @@
 }
 
 .cta-landing-page {
+  cursor: pointer;
   background: transparent;
   text-decoration: none;
   color: #fff;
@@ -113,7 +116,7 @@
 }
 
 
-.landing-page-wave {
+.wave-landing-page {
   grid-area: contenido;
   align-self: end;
 }
@@ -136,6 +139,7 @@
 
   .figure-langing-page {
     grid-row: 1/2;
+    margin-top: 1rem;
   }
   .img-landing-page {
     max-width: 300px;
