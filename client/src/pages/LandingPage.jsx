@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./landingPage.css";
 
 const LandingPage = () => {
@@ -16,9 +16,9 @@ const LandingPage = () => {
 
           <ul className="list-landing-page">
             <li className="item-landing-page">
-              <a className="link-landing-page" href="/">
+              <Link className="link-landing-page" href="/">
                 Home
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -37,7 +37,7 @@ const LandingPage = () => {
           <figure className="figure-langing-page">
             <img
               className="img-landing-page"
-              src="./src/uttils/undraw_doctors_p6aq.svg"
+              src="../src/uttils/undraw_doctors_p6aq.svg"
               alt="image-doctors"
             />
           </figure>
@@ -46,7 +46,7 @@ const LandingPage = () => {
         <div className="wave-landing-page">
           <img
             className="wave-landing-page-end"
-            src="./src/uttils/wave.svg"
+            src="../src/uttils/wave.svg"
             alt="wave"
           />
         </div>

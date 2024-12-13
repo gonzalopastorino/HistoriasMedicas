@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./registrarse.css";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../Context/AuthContext";
