@@ -1,45 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
-
-/*Seccion Registro (en infolanding) */
+/* Sección Registro (en InfoLanding) */
 .section-formulario-registro {
     font-family: 'Open Sans', sans-serif;
     background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
     color: #fff;
     display: flex;
     min-height: 100vh;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 6rem;
 }
 
-
 /* Formulario general */
 .formulario-registro {
-    margin: 6rem auto;
-    width: 90%;
-    max-width: 400px;
-    padding: 3rem 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px -5px rgba(255, 255, 255, 0.3);
-    border: 1px solid #dddbdb;
+    margin: 100px; /* Ajuste de margen */
+    width: 35%; /* Mantener el ancho como en el formulario viejo */
+    padding: 40px; /* Padding ajustado igual al viejo */
+    border-radius: 10px; /* Aumentamos el border-radius para bordes más redondeados */
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065); /* Sombra más suave */
+    border: 1px solid #ddd;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+    height: auto; /* Dejar la altura automática para que no se vea afectada */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Cambié esto para que no haya un espacio innecesario al final */
 }
 
+
+/* Título del formulario */
 .formulario-registrarse-title {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 400;
-    letter-spacing: 2px;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem; /* Espacio debajo del título */
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
+/* Contenedor de los inputs */
 .formulario-contenedor {
-    margin-top: 3rem;
+    margin-top: 2rem;
     display: grid;
-    gap: 1rem;
+    gap: 2rem; /* Aumento de espacio entre inputs */
 }
 
+/* Estilos de los inputs */
 .form-input-group {
     position: relative;
     color: #fff;
+    border-radius: 80%;
 }
 
 .form-control {
@@ -48,92 +55,66 @@
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    padding: 1.5rem 5rem ;
-    border: none; 
+    padding: 12px 20px; /* Espaciado ajustado */
+    margin-bottom: 1.5rem; /* Espacio mayor entre los inputs */
+    border: none;
     outline: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 2px solid #fff;
     transition: background-color 0.8s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    border-radius: 12px; /* Bordes más redondeados */
 }
 
-.form-control:focus + .for-label,
-.form-control:not(:placeholder-shown) + .form-label {
-    transform: translateY(-4rem) scale(0.8);
-    transform-origin: left top;
-    color:rgba(5, 71, 238, 0.3)
+/* Estilo para el mensaje de error */
+.mensaje-error {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    visibility: hidden; /* Ocultar mensaje por defecto */
 }
 
-/* Estilo para los labels */
-.form-label {
-    color: #fff;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0.5rem;
-    font-weight: 200;
-    text-align: right;
-    margin-right: 1rem; /* Separación entre label e input */
-    transform: translateY(1.5rem);
-    transition: transform 0.8s, color 0.8s;
+/* Hacemos visible el mensaje de error solo cuando es necesario */
+.form-input-group.has-error .mensaje-error {
+    visibility: visible;
 }
 
-
-/* Estilo de boto registrarse */
+/* Estilo del botón registrarse */
 .button-registrarse {
     text-decoration: none;
     color: #fff;
-    padding: 1rem 3rem;
+    padding: 12px 20px;
     border: 1px solid;
-    border-radius: 5px;
+    border-radius: 12px;
     display: inline-block;
     font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 2px;/* Espacio entre inputs y botones */
+    font-weight: 500;
+    letter-spacing: 1px;
     background-color: #08265f;
     border: none;
+    margin-top: 2rem;
+    width: 100%;
 }
 
-/* Estilo del botón de cambiar a login/registro */
 .button-registrarse:hover {
     background-color: #fdfeff;
     color: black;
     transition: background-color 0.5s ease-in-out;
 }
 
-.wave-form-registrase-end {
-    width: 100%;
-    bottom: 0;
-}
-
+/* Estilo del SVG en la parte inferior */
 .wave-form {
     width: 100%;
     background-color: #fff;
     position: relative;
 }
+
 .wave-form-end {
     position: absolute;
     bottom: 0;
     left: 0;
 }
 
-.text-red-500{
-    color: red;
-}
-
-.errores-registro {
-    background-color: red;
-    color: white;
-    width: 200px; /* Ajusta el ancho al 80% del contenedor */
-    height: 80px;
-  }
-
-
-/* Estilo para el texto de login/registrarse */
-.loguin {
-    margin-top: 30px;
-    text-align: center;
-}
-
+/* Ajustes responsivos para pantallas pequeñas */
 /* Ajustes responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
     .section-formulario-registro{

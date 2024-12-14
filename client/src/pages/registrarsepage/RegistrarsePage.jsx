@@ -33,7 +33,7 @@ const RegistrarsePage = () => {
           <h3 className="formulario-registrarse-title">Registrarse</h3>
 
           <div className="formulario-contenedor">
-            <div className="form-input-group">
+            <div className={`form-input-group ${errors.username ? "has-error" : ""}`}>
               <input
                 type="text"
                 placeholder="Nombre"
@@ -41,13 +41,13 @@ const RegistrarsePage = () => {
                 className="form-control"
               />
               {errors.username && (
-                <p className="text-red-500 mensaje-error">
+                <p className="mensaje-error">
                   El nombre de usuario es requerido
                 </p>
               )}
             </div>
 
-            <div className="form-input-group">
+            <div className={`form-input-group ${errors.email ? "has-error" : ""}`}>
               <input
                 type="email"
                 placeholder="Email"
@@ -55,13 +55,13 @@ const RegistrarsePage = () => {
                 className="form-control"
               />
               {errors.email && (
-                <p className="text-red-500 mensaje-error">
+                <p className="mensaje-error">
                   El email es requerido
                 </p>
               )}
             </div>
 
-            <div className="form-input-group">
+            <div className={`form-input-group ${errors.password ? "has-error" : ""}`}>
               <input
                 type="password"
                 placeholder="Contraseña"
@@ -69,7 +69,7 @@ const RegistrarsePage = () => {
                 className="form-control"
               />
               {errors.password && (
-                <p className="text-red-500 mensaje-error">
+                <p className="mensaje-error">
                   La contraseña es requerida
                 </p>
               )}
