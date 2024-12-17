@@ -6,7 +6,7 @@ const PacientesLista = ({pacientes, editarPaciente}) => {
     <>
     <h3>Registro de Pacientes</h3>
     <ul className="lista-grupo">
-      {pacientes.map((paciente, idex) => (
+      {pacientes.map((paciente, index) => (
         <PacienteItem key={index} paciente={paciente} editarPaciente={() => editarPaciente(index)} />
       ))}
     </ul>

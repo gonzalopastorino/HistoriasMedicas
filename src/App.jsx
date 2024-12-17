@@ -2,8 +2,10 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import PacientesForm from './components/PacientesForm'
 import PacientesLista from './components/PacientesLista'
-import Cards from './components/Cards/Cards'
-import Calendario from './components/calendario/Calendario';
+import TablaPacientes from './components/TablaPacientes'
+import InfoLandingPage from './pages/InfoLandingPage/InfoLandingPage'
+
+
 
 function App() {
   const [pacientes, setPacientes] = useState([])
@@ -39,19 +41,22 @@ function App() {
   
   return (
     <>
-    
-      {/* <div className="container">
+    <InfoLandingPage />
+
+
+
+      <div className="container">
         <h1>Demo Manejo de Pacientes</h1>
         <PacientesForm 
         agregarPaciente={handleAgregarPaciente}
         editandoPaciente={editandoIndex !== null ? pacientes[editandoIndex] : null}
         />
+        <TablaPacientes />
         <PacientesLista pacientes={pacientes} editarPaciente={handleEditarPaciente}
+        
         />
-
-        <Cards /> */}
-      {/* </div> */}
-        <Calendario />
+      </div>
+      
     </>
   )
 }
