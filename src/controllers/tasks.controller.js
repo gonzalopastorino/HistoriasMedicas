@@ -7,11 +7,12 @@ export const getTasks= async (req,res) =>{
     res.json(tasks);
 };
 export const createTask= async (req,res) =>{
-    const {title,description,date}= req.body
+    const {nombre, apellido, edad, diagnostico}= req.body
     const newTask= new Task({
-        title,
-        description,
-        date,
+        nombre,
+        apellido,
+        edad,
+        diagnostico,
         user: req.user.id
     })
     const savedTask= await newTask.save()

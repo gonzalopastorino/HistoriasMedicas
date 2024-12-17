@@ -2,11 +2,17 @@ import {date, z} from 'zod'
 
 
 export const createTaskSchema= z.object({
-    title: z.string({
-        required_error: 'El titulo es requerido'
+    nombre: z.string({
+        required_error: 'El nombre es requerido'
     }),
-    description: z.string({
-        required_error: 'La descripcion es requerida'
+    apellido: z.string({
+        required_error: 'El apellido es requerido'
+    }),
+    edad: z.number({
+        required_error: 'La edad es requerida'
+    }),
+    diagnostico: z.string({
+        required_error: 'El diagnostico es requerido'
     }),
     date: z.string().datetime().optional(),
 });
