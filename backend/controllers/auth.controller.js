@@ -13,16 +13,16 @@ export const registrarse = async (req,res) => {
       if(userFound) return res.status(400).json(['El correo ya esta en uso']);
 
     const passwordHash = await bcrypt.hash(password,10);
-   const newUser=  new User({
+    const newUser=  new User({
         username,
         email,
         password: passwordHash,
     })
 
-   const userSaved= await newUser.save();
-  const token = await createAccesToken({id: userSaved._id});
+    const userSaved= await newUser.save();
+    const token = await createAccesToken({id: userSaved._id});
     res.cookie('token',token);
-   
+
     
 
     res.json({
@@ -35,7 +35,7 @@ export const registrarse = async (req,res) => {
 }catch(error){
 res.status(500).json({message: error.message});
 }
-   
+
 };
 
 
@@ -55,10 +55,10 @@ export const login = async (req,res) => {
   
   const token = await createAccesToken({id: userFound._id})
 
-   
+
     
   res.cookie('token',token);
-   
+
     res.json({
         id: userFound._id,
         username: userFound.username,
@@ -69,7 +69,7 @@ export const login = async (req,res) => {
 }catch(error){
 res.status(500).json({message: error.message});
 }
-   
+
 };
 
 

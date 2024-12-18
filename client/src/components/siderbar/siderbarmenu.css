@@ -10,10 +10,3 @@ ul {
     background-color: #61276a; /* Cambia el fondo a violeta */  
     color: white; /* Y el texto a blanco para contraste */  
   }  
-
-  /* Asegura que todo el Sidebar tenga un fondo negro */
-.bg-black {
-  background-color: black !important;
-  
-}
-

@@ -3,14 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";  
 import "bootstrap/js/dist/dropdown";  
 import "./siderbarmenu.css";  
+import { useNavigate } from "react-router";
 
-const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {  
+
+const SidebarMenu = ({ onRegistrarPacientes,onVerPacientes, onChangeView }) => {  
+  let navigate = useNavigate();
 
   return (  
-    <div className="bg-black col-auto col-md-2 min-vh-100 d-flex flex-column justify-content-between pt-5">  
+    <div className="bg-dark col-auto col-md-2 min-vh-100 d-flex flex-column justify-content-between pt-5">  
       {/* Menú principal */}  
       <div>  
-        <ul className="nav nav-pills flex-column bg-black">  
+        <ul className="nav nav-pills flex-column">  
           {/* Inicio */}  
           <li className="nav-item text-white my-3">  
             <a  
@@ -52,7 +55,7 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
               <i className="bi bi-caret-right-fill ms-auto"></i>  
             </a>  
             <ul  
-              className="dropdown-menu dropdown-menu-end bg-black text-white"  
+              className="dropdown-menu dropdown-menu-end bg-dark text-white"  
               aria-labelledby="pacientesDropdown"  
             >  
               <li>  
@@ -68,7 +71,12 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
                 </a>  
               </li>  
               <li>  
-                <a className="dropdown-item text-white" href="#">  
+                <a className="dropdown-item text-white" href="#" 
+                  onClick={(e) => {                      
+                  navigate("/patients")
+                  e.preventDefault();  
+                  onVerPacientes();  
+                }}  >  
                   Ver Pacientes  
                 </a>  
               </li>  
@@ -118,7 +126,7 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
               <span className="ms-3 d-none d-sm-inline">Configuración</span>  
             </a>  
           </li>  
-
+          
           {/* Usuario (Tócame) */}  
           <li className="nav-item text-white my-3 dropdown">  
             <a  
@@ -134,7 +142,7 @@ const SidebarMenu = ({ onRegistrarPacientes, onChangeView }) => {
               <i className="bi bi-caret-right-fill ms-auto"></i>  
             </a>  
             <ul  
-              className="dropdown-menu dropdown-menu-end bg-black text-white"  
+              className="dropdown-menu dropdown-menu-end bg-dark text-white"  
               aria-labelledby="triggerId"  
             >  
               <li>  

@@ -7,7 +7,7 @@ const InfoLandingPage = () => {
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === "#registrarse") {
-      const registrarseSection = document.getElementById("registrarse");
+      // const registrarseSection = document.getElementById("registrarse");
       
     }
   }, []);
