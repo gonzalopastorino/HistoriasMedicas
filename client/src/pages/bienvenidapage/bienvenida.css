@@ -1,36 +1,71 @@
-.bienvenido-text {
-    font-size: 1.2em; /* Tamaño del texto */
-    font-weight: bold; /* Negrita */
-    margin-right: 10px; /* Espaciado entre el texto y el ícono */
-    color: #fff; /* Color del texto */
-  }
-  
-  .dropdown button {
-    background-color: transparent; /* Fondo transparente */
-    border: none; /* Sin borde */
-    color: #fff; /* Color del ícono */
-    display: flex;
-    align-items: center;
-  }
-  
-  .dropdown-menu {
-    background-color: #000; /* Fondo oscuro del menú */
-    color: #fff; /* Texto blanco */
-  }
-  
-  .dropdown-menu .dropdown-item {
-    color: #fff; /* Texto blanco */
-  }
-  
-  .dropdown-menu .dropdown-item:hover {
-    background-color: #61276a; /* Fondo violeta al pasar el mouse */
-  }
-  
-  .navbar .d-flex.align-items-center {
-    margin-left: auto; /* Empuja todo el contenido hacia la derecha */
-  }
-  
-  /* Aumentar el tamaño del ícono */
-  .dropdown button i {
-    font-size: 2.3em !important; /* Aumentar tamaño del ícono con !important */
-  }
+/* Estilo del Sidebar (sin fondo gris ni blanco) */
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 200px;
+  background-color: black; /* Fondo transparente (o puedes cambiarlo por el color que desees) */
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: none; /* Elimina cualquier sombra predeterminada */
+}
+
+
+
+
+
+/* Control de visibilidad del Sidebar */
+.sidebar-container.visible {
+  transform: translateX(0);
+}
+
+.sidebar-container.hidden {
+  transform: translateX(-100%);
+}
+
+/* Botón hamburguesa fijo */
+.btn-hamburguesa {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* Siempre encima del Sidebar */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Fondo original del botón */
+  color: #ffffff; /* Color de icono blanco */
+  border: none;
+  font-size: 1.5rem;
+}
+
+.btn-hamburguesa:hover {
+  cursor: pointer;
+  background-color: #333; /* Cambio sutil al pasar el mouse */
+}
+
+.dropdown-menu {
+  background-color: #000; /* Fondo oscuro del menú */
+  color: #fff; /* Texto blanco */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #fff; /* Texto blanco */
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #61276a; /* Fondo violeta al pasar el mouse */
+}
+
+.navbar .d-flex.align-items-center {
+  margin-left: auto; /* Empuja todo el contenido hacia la derecha */
+}
+
+/* Aumentar el tamaño del ícono */
+.dropdown button i {
+  font-size: 2.3em !important; /* Aumentar tamaño del ícono con !important */
+}
