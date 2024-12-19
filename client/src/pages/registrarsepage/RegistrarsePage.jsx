@@ -80,6 +80,13 @@ const RegistrarsePage = () => {
             </button>
           </div>
         </form>
+
+        <figure className="figure-registrarse-up">
+          <img className="img-registrarse-up"
+          src="../../uttils/registrarse-up.svg" 
+          alt="" />
+        </figure>
+
       </section>
     </>
   );

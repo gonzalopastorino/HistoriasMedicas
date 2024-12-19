@@ -71,6 +71,9 @@ const LoginPage = () => {
                     </Link>  
                 </div>  
             </div>  
+            <figure className="img-registrarse-up">
+                <img src="../../uttils/registrarse-up.svg" alt="" />
+            </figure>
         </div>  
     );  
 };  

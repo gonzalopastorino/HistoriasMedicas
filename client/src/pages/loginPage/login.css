@@ -1,6 +1,6 @@
 /* Estilos generales del formulario */
 .form {
-    background-color: white; /* Fondo blanco */
+    background-color: rgb(255, 255, 255); /* Fondo blanco */
     padding: 20px;           /* Espaciado interno */
     border-radius: 10px;     /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */

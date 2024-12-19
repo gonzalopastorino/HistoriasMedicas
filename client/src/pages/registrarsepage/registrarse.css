@@ -4,11 +4,14 @@
     background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
     color: #fff;
     display: flex;
+    width: 100%;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
     padding-bottom: 6rem;
 }
+
+
 
 /* Formulario general */
 .formulario-registro {
@@ -144,4 +147,10 @@
     .button-registrarse {
         width: 100%; /* Los botones ocuparán todo el ancho */
     }
+}
+
+
+/*Registrarse-page estilos*/
+.registrarse-page{
+
 }
