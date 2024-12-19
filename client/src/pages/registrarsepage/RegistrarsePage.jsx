@@ -23,12 +23,14 @@ const RegistrarsePage = () => {
 
   return (
     <>
+    
       <section className="section-formulario-registro">
         {registerErrors.map((error, i) => (
           <div className="errores-registro" key={i}>
             {error}
           </div>
         ))}
+        
         <form className="formulario-registro" onSubmit={onSubmit}>
           <h3 className="formulario-registrarse-title">Registrarse</h3>
 
@@ -81,13 +83,18 @@ const RegistrarsePage = () => {
           </div>
         </form>
 
-        <figure className="figure-registrarse-up">
-          <img className="img-registrarse-up"
+        
+        <div className="figure-registro-up">
+          <img className="img-registro-up"
           src="../../uttils/registrarse-up.svg" 
           alt="" />
-        </figure>
+        </div>
 
       </section>
+
+      <div className="wave-registrarse-end">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320"><path fill="#f3f4f5" d="M0,128L80,154.7C160,181,320,235,480,218.7C640,203,800,117,960,74.7C1120,32,1280,32,1360,32L1440,32L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+        </div>
     </>
   );
 };

@@ -1,7 +1,10 @@
-/* Sección Registro (en InfoLanding) */
+
+
+/*Sección Registro (en InfoLanding) */
 .section-formulario-registro {
     font-family: 'Open Sans', sans-serif;
-    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    /* background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%); */
+
     color: #fff;
     display: flex;
     width: 100%;
@@ -9,20 +12,35 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 6rem;
+    
+    background-image: url(../../uttils/registrarse-up.svg);
+    background-position:x 70px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 10rem;
+    
+    
 }
 
-
+.img-registro-up {
+    /* max-width: 500px; */
+    margin-top: 3rem;
+}
 
 /* Formulario general */
 .formulario-registro {
+    background: #fafafa10;
+    backdrop-filter: blur(2rem); 
+
+    opacity: 0.9;
     margin: 100px; /* Ajuste de margen */
     width: 35%; /* Mantener el ancho como en el formulario viejo */
     padding: 40px; /* Padding ajustado igual al viejo */
     border-radius: 10px; /* Aumentamos el border-radius para bordes más redondeados */
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065); /* Sombra más suave */
-    border: 1px solid #ddd;
+    box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.065); /* Sombra más suave */
+    border: 2px solid #fafafa10;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+    background-color: rgba(21, 21, 22, 0.756); /* Fondo oscuro */
     height: auto; /* Dejar la altura automática para que no se vea afectada */
     display: flex;
     flex-direction: column;
@@ -49,7 +67,7 @@
 .form-input-group {
     position: relative;
     color: #fff;
-    border-radius: 80%;
+    border-radius: 5px;
 }
 
 .form-control {
@@ -92,7 +110,7 @@
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 1px;
-    background-color: #08265f;
+    background-color: #092d6f;
     border: none;
     margin-top: 2rem;
     width: 100%;
@@ -101,29 +119,24 @@
 .button-registrarse:hover {
     background-color: #fdfeff;
     color: black;
+    border: 1px solid #fdfeff;
     transition: background-color 0.5s ease-in-out;
 }
 
-/* Estilo del SVG en la parte inferior */
-.wave-form {
-    width: 100%;
-    background-color: #fff;
-    position: relative;
-}
 
-.wave-form-end {
-    position: absolute;
+.wave-registrarse-end {
+    /* position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0; */
+    align-self: end;
 }
 
 /* Ajustes responsivos para pantallas pequeñas */
 /* Ajustes responsivos para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .section-formulario-registro{
-        width: 100%;
-        
-        
+        width: 90%;
+        padding-top: 2rem;
     }
     .formulario-registro {
         width: 80%; /* El formulario ocupará más espacio en pantallas pequeñas */
@@ -147,10 +160,13 @@
     .button-registrarse {
         width: 100%; /* Los botones ocuparán todo el ancho */
     }
+    .figure-registrarse-up {
+        margin-top: 1rem; 
+    }
+    .img-registro-up {
+        align-self: flex-end;
+    }
+    
 }
 
 
-/*Registrarse-page estilos*/
-.registrarse-page{
-
-}
