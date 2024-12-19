@@ -5,10 +5,13 @@ import LoginPage from "./pages/loginPage/LoginPage"
 import { AuthProvoder } from "./components/Context/AuthContext";
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import BienvenidaPage from "./pages/bienvenidapage/BienvenidaPage";
+import { TaskProvider } from "./components/Context/TasksContext";
 
 function App() {
   return (
+
     <AuthProvoder>
+      <TaskProvider>
        <BrowserRouter>
       <Routes>
         
@@ -25,6 +28,7 @@ function App() {
         </Route>
       </Routes>
       </BrowserRouter>
+      </TaskProvider>
     </AuthProvoder>
   );
 }
