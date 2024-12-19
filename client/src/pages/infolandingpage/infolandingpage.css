@@ -109,42 +109,61 @@
   display: block;
 }
 
-
 .figure-info-langing-page {
   width: 100%;
 }
 
 .img-info-landing-page {
   max-width: 500px;
+  width: 100%;
+  height: auto;
 }
+
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .info-landing-page .informacion-landing-page {
+  .main-info-landing-page {
     grid-template-columns: 1fr;
   }
 
-  .info-landing-page .info-landing-page-content,
-  .info-landing-page .figure-landing-page {
-    grid-column: span 12;
-  }
-
-  .info-landing-page .title-info-landing-page {
-    font-size: 2rem;
-  }
-
-  .info-landing-page .paragraph-info-landing-page {
-    font-size: 0.9rem;
-  }
-
-  .info-landing-page .img-landing-page {
-    width: 80%;
-  }
-
-  .info-landing-page .link-landing-page {
-    position: relative;
-    bottom: 10px;
-    font-size: 1rem;
+  .texts-info-landing-page {
     text-align: center;
+  }
+
+  .title-info-landing-page {
+    font-size: 1.5rem;
+  }
+
+  .subtitle-info-landing-page {
+    font-size: 1rem;
+  }
+
+  .cta-2-info-landing-page {
+    font-size: 1.1rem;
+    padding: 0.8rem 2.5rem;
+  }
+
+  .img-info-landing-page {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-info-landing-page {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-info-landing-page {
+    font-size: 1.2rem;
+  }
+
+  .cta-2-info-landing-page {
+    font-size: 1rem;
+    padding: 0.6rem 2rem;
+  }
+
+  .main-info-landing-page {
+    padding: 20px;
   }
 }
