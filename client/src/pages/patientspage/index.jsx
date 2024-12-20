@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 //import { Link } from "react-router-dom";
 import { getPatients } from "../../api/patients";
+import Tabla from "../../components/tabla/Tabla";
 
 const TablePatients = () => {
   const [patients, setPatients] = useState([]);
@@ -18,17 +19,17 @@ const TablePatients = () => {
   console.log(patients);
 
   return (
-    <div>
-      <h1>Lista de pacientes</h1>
-      <ul>
-        {patients.map((patient) => (
+    <Tabla pacientes={patients} />
+    // <div>
+    //   <h1>Lista de pacientes</h1>
+    //   <ul>
+    //     {patients.map((patient) => (
         // eslint-disable-next-line react/jsx-key
-        <p>{patient.name}</p>
-        //<p>{patient.apellido}</p>
+        // <p>{patient.name}</p>
         
-        ))}
-      </ul>
-    </div>
+    //     ))}
+    //   </ul>
+    // </div>
   );
 
 }
