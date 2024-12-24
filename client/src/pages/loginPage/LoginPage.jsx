@@ -21,6 +21,8 @@ const LoginPage = () => {
         signin(data);  
     });
 
+   
+
     return (  
         <div className="section-formulario-registro">  
             <div className="formulario-registro">  

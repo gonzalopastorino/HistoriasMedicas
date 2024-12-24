@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTasks } from "../Context/TasksContext";
+
 const PacientesForm = () => {
   const {register,handleSubmit}= useForm();
   const {createTask}=useTasks();
-  console.log(createTask);
-  const onSubmit = handleSubmit((data)=>{
-    console.log(data)
+  
+  const onSubmit = handleSubmit((data) => {
+    
+    createTask(data);
   });
+  
+
   return (
     <div className="container">
       <form onSubmit={onSubmit} className="mb-4">
