@@ -6,7 +6,6 @@
     /* background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%); */
 
     color: #fff;
-    display: flex;
     width: 100%;
     min-height: 100vh;
     justify-content: center;
@@ -17,8 +16,10 @@
     background-position:x 70px;
     background-repeat: no-repeat;
     background-size: contain;
+    display: flex;
     margin-top: 10rem;
     
+
     
 }
 
@@ -30,17 +31,17 @@
 /* Formulario general */
 .formulario-registro {
     background: #fafafa10;
-    backdrop-filter: blur(2rem); 
+    backdrop-filter: blur(0.4rem); 
 
     opacity: 0.9;
     margin: 100px; /* Ajuste de margen */
     width: 35%; /* Mantener el ancho como en el formulario viejo */
     padding: 40px; /* Padding ajustado igual al viejo */
     border-radius: 10px; /* Aumentamos el border-radius para bordes más redondeados */
-    box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.065); /* Sombra más suave */
+    box-shadow: 1px 1px 8px rgba(139, 137, 137, 0.565); /* Sombra más suave */
     border: 2px solid #fafafa10;
     text-align: center;
-    background-color: rgba(21, 21, 22, 0.756); /* Fondo oscuro */
+    background-color: rgba(132, 132, 133, 0.756); /* Fondo oscuro */
     height: auto; /* Dejar la altura automática para que no se vea afectada */
     display: flex;
     flex-direction: column;
