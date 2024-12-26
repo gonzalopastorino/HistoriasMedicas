@@ -19,4 +19,7 @@ app.use('/auth',authRoutes);
 app.use('/medico',taskRoutes);
 
 app.use('/patients',patientesRoutes);
+
+
+
 export default app;
