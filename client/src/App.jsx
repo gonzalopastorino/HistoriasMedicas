@@ -14,6 +14,7 @@ function App() {
   return (
     <AuthProvoder>
       <TaskProvider>
+        <main>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -30,6 +31,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
+      </main>
       </TaskProvider>
     </AuthProvoder>
   );

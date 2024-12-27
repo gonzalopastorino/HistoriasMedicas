@@ -1,14 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTasks } from "../Context/TasksContext";
+import {useNavigate,useParams} from "react-router-dom";
 
 const PacientesForm = () => {
-  const {register,handleSubmit}= useForm();
-  const {createTask}=useTasks();
+  const {register,handleSubmit,setValue}= useForm();
+  const {createTask,getTask,updateTask}=useTasks();
+  const navigate= useNavigate();
+  const params = useParams();
+
+  useEffect(()=>{
+   async function loadTask(){
+    if(params.id){
+      const task= await getTask(params.id);
+   
+      setValue('nombre', task.nombre)
+      setValue('apellido', task.apellido)
+      setValue('edad', task.edad)
+      setValue('diagnostico', task.diagnostico)
+     
+    }
+   }
+   loadTask();
+  },[])
   
   const onSubmit = handleSubmit((data) => {
+    if(params.id){
+      updateTask(params.id,data)
+    }else{
+      createTask(data);
+    }
     
-    createTask(data);
+    navigate('/tasks');
   });
   
 

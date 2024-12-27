@@ -3,12 +3,14 @@ import SidebarMenu from "../../components/siderbar/SiderBarMenu";
 import PacientesForm from "../../components/pacientes/PacientesForm";
 import Carrusel from "./Carussel"; // Importa el componente Carrusel
 import { useAuth } from "../../components/Context/AuthContext"; // Importa tu contexto de autenticación
-import { Link } from "react-router-dom"; // Para enlaces de React Router
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'; // Para enlaces de React Router
 import "./bienvenida.css";
 
 const BienvenidaPage = () => {
   const [view, setView] = useState("inicio");
   const [menuVisible, setMenuVisible] = useState(false);
+   const navigate = useNavigate()
 
   const toggleMenu = () => setMenuVisible(!menuVisible);
 
@@ -20,8 +22,8 @@ const BienvenidaPage = () => {
     <div className="bienvenida-container d-flex">
       <div className={`sidebar-container ${menuVisible ? "visible" : "hidden"}`}>
         <SidebarMenu
-          onRegistrarPacientes={() => handleChangeView("registrarPacientes")}
-          onChangeView={handleChangeView}
+          onRegistrarPacientes={() => navigate("/add-task")}
+         
         />
       </div>
 
@@ -69,7 +71,7 @@ const BienvenidaPage = () => {
           {/* Mostrar el carrusel solo cuando estamos en la vista de inicio */}
           {view === "inicio" && <Carrusel />}
 
-          {view === "registrarPacientes" && <PacientesForm />}
+       
         </div>
       </div>
     </div>

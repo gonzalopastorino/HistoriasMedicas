@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useTasks } from '../../components/Context/TasksContext';
 import SidebarMenu from "../../components/siderbar/SiderBarMenu";  // Asegúrate de tener la ruta correcta
 import { useNavigate } from 'react-router-dom'; // Importamos useNavigate para navegar a otras páginas
-
+import TaskCard from '../../components/card/TaskCard'
 function TasksPage() {
   const { getTasks, tasks } = useTasks(); // Obtén las tareas del contexto
   const navigate = useNavigate(); // Hook de navegación
@@ -14,7 +14,7 @@ function TasksPage() {
   if (tasks.length === 0) {
     return (
       <div className="d-flex">
-        <SidebarMenu onRegistrarPacientes={() => navigate("/bienvenida")} />
+        <SidebarMenu onRegistrarPacientes={() => navigate("/add-task")} />
         <div className="main-content ms-3">
           <h1>No hay pacientes registrados</h1>
         </div>
@@ -27,15 +27,12 @@ function TasksPage() {
   return (
     <div className="d-flex">
       <SidebarMenu onRegistrarPacientes={() => navigate("/add-task")} />
-      <div className="main-content ms-3">
-        {tasks.map((task) => (
-          <div key={task._id}>
-            <p>{task.nombre}</p>
-            <p>{task.apellido}</p>
-            <p>{task.edad}</p>
-            <p>{task.diagnostico}</p>
-          </div>
+      {tasks.map((task) => (
+          <TaskCard task={task} key={task._id}/>
+          
         ))}
+      <div className="card mb-3"  >
+        
       </div>
     </div>
   );
