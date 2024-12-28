@@ -5,12 +5,10 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/js/dist/dropdown";
 import "./siderbarmenu.css";
 
-const SidebarMenu = ({ onRegistrarPacientes }) => {
+const SidebarMenu = () => {
   const navigate = useNavigate();
 
-  const handleNavigation = (route) => {
-    navigate(route);  // Navega a la ruta proporcionada
-  };
+  
 
   return (
     <div className="bg-black col-auto col-md-2 min-vh-100 d-flex flex-column justify-content-between pt-5">
@@ -24,7 +22,7 @@ const SidebarMenu = ({ onRegistrarPacientes }) => {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                handleNavigation("/bienvenida"); // Navegar a la página de inicio
+                navigate("/bienvenida"); // Navegar a la página de inicio
               }}
             >
               <i className="bi bi-house-door-fill text-white"></i>
@@ -67,7 +65,7 @@ const SidebarMenu = ({ onRegistrarPacientes }) => {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    onRegistrarPacientes(); // Llama a la función que abrirá el formulario
+                   navigate("/add-task")
                   }}
                 >
                   Registrar Pacientes
@@ -79,7 +77,7 @@ const SidebarMenu = ({ onRegistrarPacientes }) => {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavigation("/tasks"); // Navega a la página de tareas
+                    navigate("/tasks"); // Navega a la página de tareas
                   }}
                 >
                   Ver Pacientes
