@@ -10,6 +10,7 @@ import SidebarMenu from "./components/siderbar/SiderBarMenu";
 import Navbar from "./components/navbar/Navbar";
 
 import PacientesForm from "./components/pacientes/PacientesForm";
+import TablasForm from "./components/tabla/TablasForm";
 import TasksPage from "./pages/taskspage/TasksPage";
 
 function App() {
@@ -82,6 +83,21 @@ function App() {
                     </div>
                   }
                 />
+                <Route
+                  path="/tablas-pacientes"
+                  element={
+                    <div className="d-flex">
+                      <SidebarMenu />
+                      <div className="flex-grow-1">
+                        <Navbar />
+                        <div className="p-4">
+                          <TablasForm />
+                        </div>
+                      </div>
+                    </div>
+                  }
+                />
+
                 <Route
                   path="/profile"
                   element={
