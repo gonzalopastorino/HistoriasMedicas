@@ -25,16 +25,14 @@ function TasksPage() {
   }
 
   return (
-    <div className="d-flex">
-     
-      {tasks.map((task) => (
-          <TaskCard task={task} key={task._id}/>
-          
-        ))}
-      <div className="card mb-3"  >
-        
-      </div>
-    </div>
+    <div className="container mt-4">
+  <div className="row">
+    {tasks.map((task) => (
+      <TaskCard task={task} key={task._id} />
+    ))}
+  </div>
+</div>
+
   );
 }
 

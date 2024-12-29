@@ -17,3 +17,6 @@ ul {
   
 }
 
+.collapsed {  
+  display: none; /* Ocultar el contenido del menú colapsado */  
+}

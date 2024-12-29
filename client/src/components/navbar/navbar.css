@@ -1,0 +1,7 @@
+.navbar {  
+    position: relative;  
+    z-index: 1060;  /* Un valor mayor al z-index del botón hamburguesa */  
+   
+  }  
+  
+  

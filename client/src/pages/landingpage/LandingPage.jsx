@@ -5,7 +5,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   const handleNavigateToInfo = () => {
-    navigate("/informacion#registrarse"); // Redirige con un ancla
+    navigate("/informacion"); // Redirige con un ancla
   };
 
   return (

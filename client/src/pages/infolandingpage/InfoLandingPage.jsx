@@ -4,12 +4,7 @@ import RegistrarsePage from "../registrarsepage/RegistrarsePage";
 import "./InfoLandingPage.css";
 
 const InfoLandingPage = () => {
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (hash === "#registrarse") {
-      const registrarseSection = document.getElementById("registrarse");
-    }
-  }, []);
+ 
 
   return (
     <header className="header-info-landing-page">
