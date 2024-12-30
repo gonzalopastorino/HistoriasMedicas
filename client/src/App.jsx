@@ -12,6 +12,7 @@ import ErrorPage from "./pages/errorpage/ErrorPage"
 import PacientesForm from "./components/pacientes/PacientesForm";
 import TablasForm from "./components/tabla/TablasForm";
 import TasksPage from "./pages/taskspage/TasksPage";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   return (
@@ -109,7 +110,7 @@ function App() {
                       <div className="flex-grow-1">
                         <Navbar />
                         <div className="p-4">
-                          <h1>Profile</h1>
+                          <Profile/>
                         </div>
                       </div>
                     </div>

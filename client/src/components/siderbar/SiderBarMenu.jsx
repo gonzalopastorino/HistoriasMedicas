@@ -57,16 +57,7 @@ const SidebarMenu = () => {
               </a>
             </li>
 
-            {/* Médico */}
-            <li className="nav-item text-white my-3">
-              <a
-                className="text-decoration-none text-white p-2 d-flex align-items-center"
-                href="#"
-              >
-                <i className="bi bi-person text-white"></i>
-                <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Médico</span>
-              </a>
-            </li>
+
 
             {/* Pacientes con submenú */}
             <li className="nav-item text-white my-3 dropdown">
@@ -136,16 +127,7 @@ const SidebarMenu = () => {
               </a>
             </li>
 
-            {/* Consultas */}
-            <li className="nav-item text-white my-3">
-              <a
-                className="text-decoration-none text-white p-2 d-flex align-items-center"
-                href="#"
-              >
-                <i className="bi bi-question-circle text-white"></i>
-                <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Consultas</span>
-              </a>
-            </li>
+
 
             {/* Calendario */}
             <li className="nav-item text-white my-3">
@@ -188,12 +170,13 @@ const SidebarMenu = () => {
                 aria-labelledby="triggerId"
               >
                 <li>
-                  <a className="dropdown-item text-white" href="#">
-                    Base de Datos
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item text-white" href="#">
+                  <a className="dropdown-item text-white" href="#"
+
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/profile");
+                    }}
+                  >
                     Perfil
                   </a>
                 </li>
