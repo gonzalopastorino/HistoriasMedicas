@@ -8,7 +8,7 @@ import BienvenidaPage from "./pages/bienvenidapage/BienvenidaPage";
 import { TaskProvider } from "./components/Context/TasksContext";
 import SidebarMenu from "./components/siderbar/SiderBarMenu";
 import Navbar from "./components/navbar/Navbar";
-
+import ErrorPage from "./pages/errorpage/ErrorPage"
 import PacientesForm from "./components/pacientes/PacientesForm";
 import TablasForm from "./components/tabla/TablasForm";
 import TasksPage from "./pages/taskspage/TasksPage";
@@ -24,6 +24,9 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/informacion" element={<InfoLandingPage />} />
               <Route path="/login" element={<LoginPage />} />
+
+              
+               
 
               {/* Rutas protegidas */}
               <Route element={<ProtectedRoute />}>
@@ -113,6 +116,7 @@ function App() {
                   }
                 />
               </Route>
+              <Route path="*" element={<ErrorPage />} />
             </Routes>
           </BrowserRouter>
         </main>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";  
+import { useEffect } from "react";  
 import { useAuth } from "../../components/Context/AuthContext";  
 import { useForm } from 'react-hook-form';  
 import { Link, useNavigate } from "react-router-dom";  
@@ -6,58 +6,55 @@ import "./login.css";
 
 const LoginPage = () => {  
     const { register, handleSubmit, formState: { errors } } = useForm();  
-    const { signin, errors: signinErrors = [], isAuthenticated } = useAuth();  // Definir signinErrors como un arreglo vacío por defecto
+    const { signin, errors: signinErrors, isAuthenticated } = useAuth();  
     const navigate = useNavigate();  
 
     useEffect(() => {  
+        console.log('Estado de isAuthenticated en Login:', isAuthenticated);  
         if (isAuthenticated) {  
             navigate("/bienvenida");  
         }  
     }, [isAuthenticated, navigate]);
 
     const onSubmit = handleSubmit(data => {  
-        signin(data);  // Llamamos al signin con los datos del formulario
+        console.log('Datos de inicio de sesión enviados:', data);  
+        signin(data);  
     });
 
     return (  
         <div className="section-formulario-registro">  
             <div className="formulario-registro">  
                 <h3 className="formulario-registrarse-title">Iniciar Sesión</h3>  
-
-                {/* Errores de backend, como "contraseña incorrecta" */}
-                {signinErrors.length > 0 && signinErrors.map((error, i) => (  // Verificamos que signinErrors no esté vacío
+                {signinErrors.map((error, i) => (  
                     <div className="errores-registro" key={i}>  
                         {error}  
                     </div>  
                 ))}  
-
                 <form onSubmit={onSubmit} className="formulario">  
-                    {/* Campo de email */}
                     <div className={`form-input-group ${errors.email ? "has-error" : ""}`}>  
                         <input  
                             type="email"  
                             placeholder="Email"  
-                            {...register("email", { required: "El email es requerido" })}  
+                            {...register("email", { required: true })}  
                             className="form-control"  
                         />  
                         {errors.email && (  
                             <p className="mensaje-error">  
-                                {errors.email.message}  {/* Mostrar el mensaje de error de react-hook-form */}
+                                El email es requerido  
                             </p>  
                         )}  
                     </div>  
 
-                    {/* Campo de contraseña */}
                     <div className={`form-input-group ${errors.password ? "has-error" : ""}`}>  
                         <input  
                             type="password"  
                             placeholder="Contraseña"  
-                            {...register("password", { required: "La contraseña es requerida" })}  
+                            {...register("password", { required: true })}  
                             className="form-control"  
                         />  
                         {errors.password && (  
                             <p className="mensaje-error">  
-                                {errors.password.message}  {/* Mostrar el mensaje de error de react-hook-form */}
+                                La contraseña es requerida  
                             </p>  
                         )}  
                     </div>  
@@ -66,14 +63,17 @@ const LoginPage = () => {
                         Iniciar Sesión  
                     </button>  
                 </form>  
-
                 <div className="registrarse mt-4">  
                     <p>¿No tienes una cuenta?</p>  
+                    {/* Cambio aquí, ahora solo usamos Link para la navegación */}
                     <Link to='../informacion' className="button-registrarse">  
                         Registrate  
                     </Link>  
                 </div>  
             </div>  
+            <figure className="img-registrarse-up">
+                <img src="../../uttils/registrarse-up.svg" alt="" />
+            </figure>
         </div>  
     );  
 };  
