@@ -39,10 +39,13 @@
     box-shadow: 1px 1px 8px rgba(139, 137, 137, 0.565); /* Sombra más suave */
     border: 2px solid #fafafa10;
     text-align: center;
-    background-color: rgba(132, 132, 133, 0.756); /* Fondo oscuro */
+    background-color: rgba(255, 255, 255, 0.51); /* Fondo oscuro */
     height: auto; /* Dejar la altura automática para que no se vea afectada */
     display: flex;
     flex-direction: column;
+    position: relative;
+    left: 375px;
+    bottom: 100px;
     justify-content: flex-start; /* Cambié esto para que no haya un espacio innecesario al final */
 }
 
@@ -87,7 +90,9 @@
 
 /* Estilo para el mensaje de error */
 .mensaje-error {
-    color: #ff6b6b;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.875rem;
     margin-top: 0.5rem;
     visibility: hidden; /* Ocultar mensaje por defecto */
@@ -137,7 +142,7 @@
   }
   
   .mensaje-error-backend {
-    color: white;
+    color: red;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
@@ -145,41 +150,76 @@
     text-align: center;
   }
   
-
-/* Ajustes responsivos para pantallas pequeñas */
-/* Ajustes responsivos para pantallas pequeñas */
-@media (max-width: 800px) {
-    .section-formulario-registro{
-        width: 90%;
-        padding-top: 2rem;
-    }
+/* Ajustes generales para pantallas pequeñas */
+@media (max-width: 1200px) {
     .formulario-registro {
-        width: 80%; /* El formulario ocupará más espacio en pantallas pequeñas */
+      width: 50%; /* Reducir el ancho en pantallas más pequeñas */
+      margin: 50px auto; /* Centrar el formulario */
+      left: unset;
+      bottom: unset;
     }
-
-    .formulario .input-group {
-        flex-direction: column; /* En pantallas pequeñas, los elementos se apilan verticalmente */
+  
+    .section-formulario-registro {
+      padding: 4rem 1rem; /* Ajustar el padding */
+      margin-top: 5rem;
     }
-
-    .formulario .input-group label {
-        width: 100%; /* El label ocupará todo el ancho */
-        text-align: left; /* Los labels se alinean a la izquierda en pantallas pequeñas */
-        margin-right: 0; /* El margen a la derecha se elimina */
-        margin-bottom: 10px; /* Espacio adicional entre el label y el input */
+  }
+  
+  @media (max-width: 768px) {
+    .formulario-registro {
+      width: 80%; /* El formulario ocupará más espacio en pantallas más pequeñas */
+      padding: 30px; /* Ajustar el padding */
     }
-
-    .formulario .input-group input {
-        width: 100%; /* El input ocupará todo el ancho disponible */
+  
+    .section-formulario-registro {
+      flex-direction: column; /* Cambiar disposición a columna */
+      margin-top: 2rem;
     }
-
-    .button-registrarse {
-        width: 100%; /* Los botones ocuparán todo el ancho */
-    }
-    .figure-registrarse-up {
-        margin-top: 1rem; 
-    }
+  
     .img-registro-up {
-        align-self: flex-end;
+      display: none; /* Ocultar imagen para optimizar espacio */
     }
-    
-}
+  
+    .wave-registrarse-end {
+      margin-top: 1rem; /* Reducir espacio entre wave y formulario */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .formulario-registro {
+      width: 90%; /* Ocupar casi todo el ancho de la pantalla */
+      padding: 20px; /* Reducir el padding */
+    }
+  
+    .formulario-registrarse-title {
+      font-size: 1.5rem; /* Reducir el tamaño del título */
+    }
+  
+    .button-registrarse {
+      font-size: 0.875rem; /* Reducir tamaño del texto */
+      padding: 10px 15px; /* Ajustar padding */
+    }
+  
+    .mensaje-error-backend {
+      font-size: 0.875rem; /* Reducir tamaño del mensaje */
+    }
+  
+    .section-formulario-registro {
+      padding: 2rem 0.5rem; /* Ajustar padding */
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .formulario-registrarse-title {
+      font-size: 1.2rem; /* Reducir aún más el tamaño del título */
+    }
+  
+    .formulario-registro {
+      padding: 10px; /* Reducir padding para dispositivos muy pequeños */
+    }
+  
+    .mensaje-error-backend {
+      font-size: 0.75rem; /* Reducir el tamaño del mensaje de error */
+    }
+  }
+  

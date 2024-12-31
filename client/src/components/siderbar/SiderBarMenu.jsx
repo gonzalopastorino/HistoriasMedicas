@@ -123,7 +123,7 @@ const SidebarMenu = () => {
                 href="#"
               >
                 <i className="bi bi-calendar-event text-white"></i>
-                <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Cita</span>
+                <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Turno</span>
               </a>
             </li>
 
