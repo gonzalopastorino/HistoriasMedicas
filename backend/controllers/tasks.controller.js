@@ -20,7 +20,7 @@ export const createTask = async (req, res) => {
         const validatedData = createTaskSchema.parse(req.body);
 
         // Extrae los campos validados
-        const { nombre, apellido, edad, diagnostico} = validatedData;
+        const { nombre, apellido, edad, diagnostico,obrasocial,localidad,direccion} = validatedData;
 
         // Crea una nueva tarea usando el modelo Task
         const newTask = new Task({
@@ -28,6 +28,9 @@ export const createTask = async (req, res) => {
             apellido,
             edad,
             diagnostico,
+            obrasocial,
+            localidad,
+            direccion,
             user: req.user.id,        // Relaciona la tarea con el usuario autenticado
         });
 

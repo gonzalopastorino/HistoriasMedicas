@@ -39,6 +39,9 @@ const TablasForm = () => {
             <th>Apellido</th>
             <th>Edad</th>
             <th>Diagnóstico</th>
+            <th>Obra social</th>
+            <th>Localidad</th>
+            <th>Direccion</th>
           </tr>
         </thead>
         <tbody>
@@ -48,6 +51,9 @@ const TablasForm = () => {
               <td>{task.apellido}</td>
               <td>{task.edad}</td>
               <td>{task.diagnostico}</td>
+              <td>{task.obrasocial}</td>
+              <td>{task.localidad}</td>
+              <td>{task.direccion}</td>
             </tr>
           ))}
         </tbody>

@@ -14,6 +14,9 @@ function TaskCard({ task }) {
           <p><strong>Apellido:</strong> {task.apellido}</p>
           <p><strong>Edad:</strong> {task.edad}</p>
           <p><strong>Diagnóstico:</strong> {task.diagnostico}</p>
+          <p><strong>Obra social:</strong> {task.obrasocial}</p>
+          <p><strong>Localidad:</strong> {task.localidad}</p>
+          <p><strong>Direccion:</strong> {task.direccion}</p>
         </div>
         <div className="card-body d-flex flex-wrap gap-2 justify-content-center">
           {/* Botones responsivos */}

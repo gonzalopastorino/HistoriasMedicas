@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTasks } from "../Context/TasksContext";
 import {useNavigate,useParams} from "react-router-dom";
+import './pacientes.css'
 
 const PacientesForm = () => {
   const {register,handleSubmit,setValue}= useForm();
@@ -18,6 +19,9 @@ const PacientesForm = () => {
       setValue('apellido', task.apellido)
       setValue('edad', task.edad)
       setValue('diagnostico', task.diagnostico)
+      setValue('obrasocial', task.obrasocial)
+      setValue('localidad', task.localidad)
+      setValue('direccion', task.direccion)
      
     }
    }
@@ -116,7 +120,73 @@ const PacientesForm = () => {
               required
             />
           </div>
+         
         </div>
+
+        <div className="mb-3 row">
+  <label
+    className="col-12 col-md-2 col-form-label text-start text-md-end"
+    htmlFor="obrasocial"
+  >
+    Obra social
+  </label>
+  <div className="col-12 col-md-10">
+    <select
+      id="obrasocial"
+      className="form-control"
+      {...register('obrasocial')}
+      required
+    >
+      <option value="">Selecciona una opción</option>
+      <option value="Ioma">Ioma</option>
+      <option value="Pami">Pami</option>
+      <option value="Otra">Otra</option>
+    </select>
+  </div>
+</div>
+
+
+        <div className="mb-3 row">
+          <label
+            className="col-12 col-md-2 col-form-label text-start text-md-end"
+            htmlFor="diagnostico"
+          >
+            Localidad
+          </label>
+          <div className="col-12 col-md-10">
+            <input
+              id="localidad"
+              type="text"
+              className="form-control"
+              placeholder="Localidad "
+              {...register('localidad')}
+              required
+            />
+          </div>
+         
+        </div>
+
+
+        <div className="mb-3 row">
+          <label
+            className="col-12 col-md-2 col-form-label text-start text-md-end"
+            htmlFor="direccion"
+          >
+            Direccion
+          </label>
+          <div className="col-12 col-md-10">
+            <input
+              id="direccion"
+              type="text"
+              className="form-control"
+              placeholder="Direccion"
+              {...register('direccion')}
+              required
+            />
+          </div>
+         
+        </div>
+        
 
         <button  className="btn btn-primary">agregar paciente</button>
       </form>
