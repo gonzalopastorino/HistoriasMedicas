@@ -1,7 +1,7 @@
 
 
 body {
-  background-color:  #092d6f; 
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
   margin: 0;
   padding: 0;
 }
@@ -10,12 +10,19 @@ ul {
     text-decoration: none;
   }
   .my-3:hover {
-    background-color: #61276a;
+    background-color: #240e92;
+    border-radius: 5px;
   }
   
+
+  .dropdown-menu, .dropdown-item {
+    
+    border-radius: 5px;
+    background-color: rgb(37, 37, 39);
+  }
   /* SidebarMenu.css */  
-  .dropdown-item:hover {  
-    background-color: #61276a; /* Cambia el fondo a violeta */  
+  .dropdown-item :hover {  
+    border: 1px solid #6d6b6b;
     color: white; /* Y el texto a blanco para contraste */  
   }  
 
@@ -28,3 +35,7 @@ ul {
 .collapsed {  
   display: none; /* Ocultar el contenido del menú colapsado */  
 }
+
+
+
+

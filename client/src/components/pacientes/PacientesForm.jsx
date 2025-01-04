@@ -184,11 +184,12 @@ const PacientesForm = () => {
               required
             />
           </div>
-         
+        
         </div>
         
-
-        <button  className="btn btn-primary">agregar paciente</button>
+        <div className="button-pacientes-form">
+          <button className="button-agregar-paciente">Agregar paciente</button>
+        </div>
       </form>
 
     

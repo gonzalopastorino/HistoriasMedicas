@@ -5,3 +5,30 @@ label{
 select{
     cursor: pointer;
 }
+
+.button-pacientes-form {
+    text-align: right;
+}
+
+.button-agregar-paciente {
+    cursor: pointer;
+    background: transparent;
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem 3rem; /* Igualamos los botones con el mismo padding */
+    border: 1px solid;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1rem; /* Establecemos el mismo tamaño de fuente */
+    width: auto; /* Evitamos que el ancho se estire más de lo necesario */
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+
+.button-agregar-paciente:hover {
+    background-color: #fff;
+    color: #1e3c72;
+    transition: background-color 0.5s ease-in-out;
+}

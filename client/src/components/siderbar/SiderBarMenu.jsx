@@ -25,18 +25,16 @@ const SidebarMenu = () => {
       >
         {/* Botón del menú hamburguesa (siempre visible en todas las pantallas y fijo en la parte superior izquierda) */}
         <button
-          className="btn text-white p-2"
+          className="btn text-white mt-2 pt-2 d-flex align-items-center"
           onClick={toggleMenu}
           style={{
-            position: "fixed",  // Hacer que el botón sea fijo
+            position: "absolute",  // Hacer que el botón sea fijo
             top: "10px",
-            left: "10px",
             zIndex: "1050",
-            backgroundColor: "black",
             border: "none",
           }}
         >
-          <i className="bi bi-list fs-3"></i>
+          <i className="bi bi-list fs-4 "></i>
         </button>
 
         {/* Menú principal */}
@@ -74,7 +72,7 @@ const SidebarMenu = () => {
                 <i className="bi bi-caret-right-fill ms-auto"></i>
               </a>
               <ul
-                className="dropdown-menu dropdown-menu-end bg-black text-white"
+                className="dropdown-menu dropdown-menu-end bg-dark text-white"
                 aria-labelledby="pacientesDropdown"
               >
                 <li>
@@ -166,7 +164,7 @@ const SidebarMenu = () => {
                 <i className="bi bi-caret-right-fill ms-auto"></i>
               </a>
               <ul
-                className="dropdown-menu dropdown-menu-end bg-black text-white"
+                className="dropdown-menu dropdown-menu-end  text-white"
                 aria-labelledby="triggerId"
               >
                 <li>

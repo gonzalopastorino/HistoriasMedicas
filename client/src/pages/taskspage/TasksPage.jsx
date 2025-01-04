@@ -3,6 +3,9 @@ import { useTasks } from '../../components/Context/TasksContext';
 
 import { useNavigate } from 'react-router-dom'; // Importamos useNavigate para navegar a otras páginas
 import TaskCard from '../../components/card/TaskCard'
+import '../../pages/taskspage/taskPage.css'
+
+
 function TasksPage() {
   const { getTasks, tasks } = useTasks(); // Obtén las tareas del contexto
   const navigate = useNavigate(); // Hook de navegación
@@ -16,7 +19,7 @@ function TasksPage() {
       <div className="d-flex">
         
         <div className="main-content ms-3">
-          <h1>No hay pacientes registrados</h1>
+          <h1 className='title-tasks-page'>No hay pacientes registrados</h1>
         </div>
         
       </div>
