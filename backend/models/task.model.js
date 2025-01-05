@@ -11,6 +11,11 @@ const taskSchema = new mongoose.Schema({
         required: true,
     },
 
+    dni: {
+        type: Number,
+        required:true,
+    },
+
     edad: {
         type: Number,
         required: true

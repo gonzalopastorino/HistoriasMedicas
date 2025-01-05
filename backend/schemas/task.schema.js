@@ -2,6 +2,7 @@ import {date, z} from 'zod'
 
 
 export const createTaskSchema = z.object({
+    dni: z.union([z.string(), z.number()]), 
     nombre: z.string({
         required_error: "El nombre es requerido",
     }),

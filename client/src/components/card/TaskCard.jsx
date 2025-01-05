@@ -12,6 +12,7 @@ function TaskCard({ task }) {
           {/* Información de la tarea */}
           <p><strong>Nombre:</strong> {task.nombre}</p>
           <p><strong>Apellido:</strong> {task.apellido}</p>
+          <p><strong>DNI:</strong> {task.dni}</p>
           <p><strong>Edad:</strong> {task.edad}</p>
           <p><strong>Diagnóstico:</strong> {task.diagnostico}</p>
           <p><strong>Obra social:</strong> {task.obrasocial}</p>

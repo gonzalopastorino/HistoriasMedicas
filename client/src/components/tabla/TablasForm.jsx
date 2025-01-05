@@ -37,6 +37,7 @@ const TablasForm = () => {
           <tr>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>DNI</th>
             <th>Edad</th>
             <th>Diagnóstico</th>
             <th>Obra social</th>
@@ -49,6 +50,7 @@ const TablasForm = () => {
             <tr key={task._id}>
               <td>{task.nombre}</td>
               <td>{task.apellido}</td>
+              <td>{task.dni}</td>
               <td>{task.edad}</td>
               <td>{task.diagnostico}</td>
               <td>{task.obrasocial}</td>

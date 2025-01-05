@@ -20,10 +20,16 @@ export const createTask = async (req, res) => {
         const validatedData = createTaskSchema.parse(req.body);
 
         // Extrae los campos validados
-        const { nombre, apellido, edad, diagnostico,obrasocial,localidad,direccion} = validatedData;
-
+        const {nombre, apellido, dni, edad, diagnostico,obrasocial,localidad,direccion} = validatedData;
+        const existingTask = await Task.findOne({ dni });
+    if (existingTask) {
+        return res.status(400).json({
+            message: ["El dni ya esta en uso"],
+          });
+    }
         // Crea una nueva tarea usando el modelo Task
         const newTask = new Task({
+            dni,
             nombre,
             apellido,
             edad,
@@ -34,6 +40,7 @@ export const createTask = async (req, res) => {
             user: req.user.id,        // Relaciona la tarea con el usuario autenticado
         });
 
+      
         // Guarda la tarea en la base de datos
         const savedTask = await newTask.save();
 

@@ -5,44 +5,73 @@ import {useNavigate,useParams} from "react-router-dom";
 import './pacientes.css'
 
 const PacientesForm = () => {
-  const {register,handleSubmit,setValue}= useForm();
-  const {createTask,getTask,updateTask}=useTasks();
-  const navigate= useNavigate();
+  const { register, handleSubmit, setValue } = useForm();
+  const { createTask, getTask, updateTask, errors, setErrors} = useTasks();
+  const navigate = useNavigate();
   const params = useParams();
 
-  useEffect(()=>{
-   async function loadTask(){
-    if(params.id){
-      const task= await getTask(params.id);
-   
-      setValue('nombre', task.nombre)
-      setValue('apellido', task.apellido)
-      setValue('edad', task.edad)
-      setValue('diagnostico', task.diagnostico)
-      setValue('obrasocial', task.obrasocial)
-      setValue('localidad', task.localidad)
-      setValue('direccion', task.direccion)
-     
+  useEffect(() => {
+    async function loadTask() {
+      if (params.id) {
+        const task = await getTask(params.id);
+        setValue("nombre", task.nombre);
+        setValue("apellido", task.apellido);
+        setValue("dni", task.dni);
+        setValue("edad", task.edad);
+        setValue("diagnostico", task.diagnostico);
+        setValue("obrasocial", task.obrasocial);
+        setValue("localidad", task.localidad);
+        setValue("direccion", task.direccion);
+      }
     }
-   }
-   loadTask();
-  },[])
+    loadTask();
+  }, [params.id]);
+
+  const onSubmit = handleSubmit(async (data) => {
+    setErrors([]); // Limpiar errores antes de enviar
   
-  const onSubmit = handleSubmit((data) => {
-    if(params.id){
-      updateTask(params.id,data)
-    }else{
-      createTask(data);
+    try {
+      if (params.id) {
+        await updateTask(params.id, data);
+      } else {
+        await createTask(data);
+      }
+  
+      // Solo navegamos si no hay errores
+      if (errors.length === 0) {
+        navigate("/tasks");
+      }
+    } catch (error) {
+      console.log(error);
     }
-    
-    navigate('/tasks');
   });
   
+  useEffect(() => {
+    if (errors.length > 0) {
+      const timer = setTimeout(() => {
+        setErrors([]); // Limpiar errores después de 5 segundos
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [errors]);
+
+ 
 
   return (
     <div className="container">
       <form onSubmit={onSubmit} className="mb-4">
-        {/* Nombre */}
+        {/* Mostrar errores del backend */}
+        {errors.length > 0 && (
+          <div className="errores-backend">
+            {errors.map((error, i) => (
+              <p key={i} className="mensaje-error-backend">
+                {error}
+              </p>
+            ))}
+          </div>
+        )}
+
+
         <div className="mb-3 row">
           <label
             className="col-12 col-md-2 col-form-label text-start text-md-end"
@@ -77,6 +106,25 @@ const PacientesForm = () => {
               className="form-control"
               placeholder="Apellido del paciente"
              {...register('apellido')}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="mb-3 row">
+          <label
+            className="col-12 col-md-2 col-form-label text-start text-md-end"
+            htmlFor="name"
+          >
+            DNI
+          </label>
+          <div className="col-12 col-md-10">
+            <input
+              id="name"
+              type="text"
+              className="form-control"
+              placeholder="ingrese su DNI"
+             {...register('dni')}
               required
             />
           </div>
