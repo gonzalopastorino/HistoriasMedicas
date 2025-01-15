@@ -132,6 +132,10 @@ const SidebarMenu = () => {
               <a
                 className="text-decoration-none text-white p-2 d-flex align-items-center"
                 href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/calendario"); // Navegar a la página de inicio  
+                }}
               >
                 <i className="bi bi-calendar-date text-white"></i>
                 <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Calendario</span>

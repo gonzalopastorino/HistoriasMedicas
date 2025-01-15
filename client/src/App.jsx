@@ -13,6 +13,7 @@ import PacientesForm from "./components/pacientes/PacientesForm";
 import TablasForm from "./components/tabla/TablasForm";
 import TasksPage from "./pages/taskspage/TasksPage";
 import Profile from "./pages/profile/Profile";
+import Calendario from "./pages/calendariopage/Calendario";
 
 function App() {
   return (
@@ -99,6 +100,20 @@ function App() {
                   }
                 />
                 <Route
+                  path="/calendario"
+                  element={
+                    <div className="d-flex">
+                      <SidebarMenu />
+                      <div className="flex-grow-1">
+                        <Navbar />
+                        <div className="p-4">
+                          <Calendario />
+                        </div>
+                      </div>
+                    </div>
+                  }
+                />
+                <Route
                   path="/profile"
                   element={
                     <div className="d-flex">
@@ -112,7 +127,9 @@ function App() {
                     </div>
                   }
                 />
+                
               </Route>
+              
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </BrowserRouter>
