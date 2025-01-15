@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { createTaskRequest, getTasksRequest, deleteTaskRequest, getTaskRequest, updateTaskRequest } from "../../api/tasks";
 
 const TaskContext = createContext();
@@ -28,15 +28,17 @@ export function TaskProvider({ children }) {
     try {
       const res = await createTaskRequest(task);
       setTasks([...tasks, res.data]);
-      setErrors([]);  // Limpia los errores al crear la tarea correctamente
+      setErrors([]); // Limpia errores si la creación fue exitosa
+      return true; // Indica que la creación fue exitosa
     } catch (error) {
-      // Asegúrate de que los errores se configuren correctamente
-      const errorMessages = Array.isArray(error.response.data)
+      const errorMessages = Array.isArray(error.response?.data)
         ? error.response.data
-        : [error.response.data.message || "Error desconocido"];
-      setErrors(errorMessages); // Guarda los errores
+        : [error.response?.data?.message || "Error desconocido"];
+      setErrors(errorMessages); // Guarda los errores en el estado
+      return false; // Indica que la creación falló
     }
   };
+  
   
 
   const deleteTask = async (id) => {
@@ -60,10 +62,24 @@ export function TaskProvider({ children }) {
   const updateTask = async (id, task) => {
     try {
       await updateTaskRequest(id, task);
+      setErrors([]); // Limpiar errores si la actualización es exitosa
     } catch (error) {
-      console.log(error);
+      const errorMessages = Array.isArray(error.response?.data)
+        ? error.response.data
+        : [error.response?.data?.message || "Error desconocido"];
+      setErrors(errorMessages); // Guardar errores en el estado
+      throw error; // Lanza el error para que el formulario lo maneje
     }
   };
+  
+  useEffect(() => {
+    if (errors.length > 0) {
+      const timer = setTimeout(() => {
+        setErrors([]); // Limpiar errores después de 5 segundos
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [errors]);
 
   return (
     <TaskContext.Provider

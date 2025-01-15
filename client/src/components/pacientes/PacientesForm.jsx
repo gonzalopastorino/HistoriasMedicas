@@ -28,33 +28,28 @@ const PacientesForm = () => {
   }, [params.id]);
 
   const onSubmit = handleSubmit(async (data) => {
-    setErrors([]); // Limpiar errores antes de enviar
+    setErrors([]); 
+    let success = false; 
   
     try {
       if (params.id) {
-        await updateTask(params.id, data);
+        await updateTask(params.id, data); 
+        success = true; 
       } else {
-        await createTask(data);
+        success = await createTask(data); 
       }
   
-      // Solo navegamos si no hay errores
-      if (errors.length === 0) {
-        navigate("/tasks");
+      if (success) {
+        navigate("/tasks"); 
       }
     } catch (error) {
-      console.log(error);
+      console.log("Error al procesar la tarea:", error);
+     
     }
   });
   
-  useEffect(() => {
-    if (errors.length > 0) {
-      const timer = setTimeout(() => {
-        setErrors([]); // Limpiar errores después de 5 segundos
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [errors]);
-
+  
+  
  
 
   return (
