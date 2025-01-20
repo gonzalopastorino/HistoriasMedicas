@@ -4,6 +4,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import dayjs from "dayjs";
 import { getEventsRequest,createEventRequest } from "../../api/calendario.js"; // Importa las funciones de la API
 
+
 // Configuración de los mensajes en español
 const localizer = dayjsLocalizer(dayjs);
 const mensajesEspañol = {
@@ -85,7 +86,8 @@ const Calendario = () => {
       <h2>Calendario de Eventos</h2>
 
       {/* Calendario */}
-      <div style={{ height: "75vh", width: "80%" }}>
+      <div className="calendario" 
+      style={{ height: "75vh", width: "100%", backgroundImage: "linear-gradient(to top,rgb(39, 105, 172) 0%,rgb(227, 228, 231) 1%,rgb(255, 255, 255) 100%)" }}>
         <Calendar
           localizer={localizer}
           events={eventos}

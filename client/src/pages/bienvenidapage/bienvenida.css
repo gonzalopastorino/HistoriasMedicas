@@ -58,7 +58,7 @@
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: #61276a; /* Fondo violeta al pasar el mouse */
+  background-color: #1e3c72; /* Fondo violeta al pasar el mouse */
 }
 
 .navbar .d-flex.align-items-center {
@@ -69,3 +69,6 @@
 .dropdown button i {
   font-size: 2.3em !important; /* Aumentar tamaño del ícono con !important */
 }
+
+
+

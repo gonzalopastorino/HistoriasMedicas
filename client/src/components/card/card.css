@@ -1,4 +1,42 @@
 .card-body .btn {
     width: 110px !important; 
   }
-  
+
+.card {
+  border: 1px solid rgb(152, 156, 156);
+  background-color: rgb(238, 241, 241);
+  box-shadow: rgb(127, 125, 125) 6px 10px 12px 0.8px;
+}
+
+.btn-editar {
+  background-color: #fff;
+  color: #1e3c72;
+  border-radius: 5px;
+  border: 3px solid #1e3c72;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.btn-editar:hover {
+  background-color: #1e3c72;;
+  color: #fff;
+  border-radius: 5px;
+  border: 3px solid #1e3c72;
+  letter-spacing: 1px;
+}
+
+.btn-eliminar {
+  background-color: #fff;
+  color: #a62670;
+  border-radius: 5px;
+  border: 3px solid #a62670;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.btn-eliminar:hover {
+  background-color: #a62670;
+  color: #fff;
+  border-radius: 5px;
+  border: 3px solid #a62670;
+  letter-spacing: 1px;
+}

@@ -23,12 +23,12 @@ function TaskCard({ task }) {
           {/* Botones responsivos */}
           <Link 
             to={`/tasks/${task._id}`} 
-            className="btn btn-primary flex-grow-1 flex-md-grow-0 w-100 w-md-auto"
+            className="btn btn-editar flex-grow-1 flex-md-grow-0 w-100 w-md-auto"
           >
             Editar
           </Link>
           <button 
-            className="btn btn-danger flex-grow-1 flex-md-grow-0 w-100 w-md-auto" 
+            className="btn btn-eliminar flex-grow-1 flex-md-grow-0 w-100 w-md-auto" 
             onClick={() => deleteTask(task._id)}
           >
             Eliminar
