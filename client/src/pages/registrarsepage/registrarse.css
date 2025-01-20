@@ -1,225 +1,173 @@
-/*Sección Registro (en InfoLanding) */
 .section-formulario-registro {
-    font-family: 'Open Sans', sans-serif;
-    /* background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%); */
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6rem;
 
-    color: #fff;
-    width: 100%;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 6rem;
-    
-    background-image: url(../../uttils/registrarse-up.svg);
-    background-position:x 70px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: flex;
-    margin-top: 10rem;
-    
-
-    
+  background-image: url(../../uttils/registrarse-up.svg);
+  background-position: x 70px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  margin-top: 10rem;
 }
 
 .img-registro-up {
-    /* max-width: 500px; */
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 /* Formulario general */
 .formulario-registro {
-    background: #fafafa10;
-    backdrop-filter: blur(0.4rem); 
+  background: #0a4275; /* Fondo azul */
+  backdrop-filter: blur(0.4rem); 
 
-    opacity: 0.9;
-    margin: 100px; /* Ajuste de margen */
-    width: 35%; /* Mantener el ancho como en el formulario viejo */
-    padding: 40px; /* Padding ajustado igual al viejo */
-    border-radius: 10px; /* Aumentamos el border-radius para bordes más redondeados */
-    box-shadow: 1px 1px 8px rgba(139, 137, 137, 0.565); /* Sombra más suave */
-    border: 2px solid #fafafa10;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.51); /* Fondo oscuro */
-    height: auto; /* Dejar la altura automática para que no se vea afectada */
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    left: 375px;
-    bottom: 100px;
-    justify-content: flex-start; /* Cambié esto para que no haya un espacio innecesario al final */
+  opacity: 0.9;
+  margin: 100px;
+  width: 35%;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid #0a4275;
+  text-align: center;
+  background-color: rgba(10, 66, 117, 0.9); /* Fondo azul translúcido */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 375px;
+  bottom: 100px;
+  justify-content: flex-start;
 }
-
 
 /* Título del formulario */
 .formulario-registrarse-title {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem; /* Espacio debajo del título */
-    font-weight: 600;
-    letter-spacing: 1px;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 /* Contenedor de los inputs */
 .formulario-contenedor {
-    margin-top: 2rem;
-    display: grid;
-    gap: 2rem; /* Aumento de espacio entre inputs */
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
 }
 
 /* Estilos de los inputs */
 .form-input-group {
-    position: relative;
-    color: #fff;
-    border-radius: 5px;
+  position: relative;
+  color: #fff;
+  border-radius: 5px;
 }
 
 .form-control {
-    width: 100%;
-    background: none;
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    padding: 12px 20px; /* Espaciado ajustado */
-    margin-bottom: 1.5rem; /* Espacio mayor entre los inputs */
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #fff;
-    transition: background-color 0.8s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
-    border-radius: 12px; /* Bordes más redondeados */
+  width: 100%;
+  background: none;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  padding: 12px 20px;
+  margin-bottom: 1.5rem;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #fff;
+  transition: background-color 0.8s ease-in-out;
+  background-color: rgba(10, 66, 117, 0.7); /* Fondo azul oscuro */
+  border-radius: 12px;
 }
 
 /* Estilo para el mensaje de error */
 .mensaje-error {
-    color: black;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-    visibility: hidden; /* Ocultar mensaje por defecto */
+  color: white;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  visibility: hidden;
 }
 
 /* Hacemos visible el mensaje de error solo cuando es necesario */
 .form-input-group.has-error .mensaje-error {
-    visibility: visible;
+  visibility: visible;
 }
 
 /* Estilo del botón registrarse */
 .button-registrarse {
-    text-decoration: none;
-    color: #fff;
-    padding: 12px 20px;
-    border: 1px solid;
-    border-radius: 12px;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background-color: #092d6f;
-    border: none;
-    margin-top: 2rem;
-    width: 100%;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 20px;
+  border: 1px solid;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: #092d6f;
+  border: none;
+  margin-top: 2rem;
+  width: 100%;
 }
 
 .button-registrarse:hover {
-    background-color: #fdfeff;
-    color: black;
-    border: 1px solid #fdfeff;
-    transition: background-color 0.5s ease-in-out;
+  background-color: #fdfeff;
+  color: black;
+  border: 1px solid #fdfeff;
+  transition: background-color 0.5s ease-in-out;
 }
 
-
-.wave-registrarse-end {
-    /* position: absolute;
-    bottom: 0;
-    left: 0; */
-    align-self: end;
-}
-
-.errores-backend {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-  
-  .mensaje-error-backend {
-    color: red;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    text-align: center;
-  }
-  
-/* Ajustes generales para pantallas pequeñas */
+/* Responsiveness */
 @media (max-width: 1200px) {
-    .formulario-registro {
-      width: 50%; /* Reducir el ancho en pantallas más pequeñas */
-      margin: 50px auto; /* Centrar el formulario */
+  .formulario-registro {
+      width: 50%;
+      margin: 50px auto;
       left: unset;
       bottom: unset;
-    }
-  
-    .section-formulario-registro {
-      padding: 4rem 1rem; /* Ajustar el padding */
+  }
+
+  .section-formulario-registro {
+      padding: 4rem 1rem;
       margin-top: 5rem;
-    }
   }
-  
-  @media (max-width: 768px) {
-    .formulario-registro {
-      width: 80%; /* El formulario ocupará más espacio en pantallas más pequeñas */
-      padding: 30px; /* Ajustar el padding */
-    }
-  
-    .section-formulario-registro {
-      flex-direction: column; /* Cambiar disposición a columna */
+}
+
+@media (max-width: 768px) {
+  .formulario-registro {
+      width: 80%;
+      padding: 30px;
+  }
+
+  .section-formulario-registro {
+      flex-direction: column;
       margin-top: 2rem;
-    }
-  
-    .img-registro-up {
-      display: none; /* Ocultar imagen para optimizar espacio */
-    }
-  
-    .wave-registrarse-end {
-      margin-top: 1rem; /* Reducir espacio entre wave y formulario */
-    }
   }
-  
-  @media (max-width: 480px) {
-    .formulario-registro {
-      width: 90%; /* Ocupar casi todo el ancho de la pantalla */
-      padding: 20px; /* Reducir el padding */
-    }
-  
-    .formulario-registrarse-title {
-      font-size: 1.5rem; /* Reducir el tamaño del título */
-    }
-  
-    .button-registrarse {
-      font-size: 0.875rem; /* Reducir tamaño del texto */
-      padding: 10px 15px; /* Ajustar padding */
-    }
-  
-    .mensaje-error-backend {
-      font-size: 0.875rem; /* Reducir tamaño del mensaje */
-    }
-  
-    .section-formulario-registro {
-      padding: 2rem 0.5rem; /* Ajustar padding */
-    }
+
+  .img-registro-up {
+      display: none;
   }
-  
-  @media (max-width: 360px) {
-    .formulario-registrarse-title {
-      font-size: 1.2rem; /* Reducir aún más el tamaño del título */
-    }
-  
-    .formulario-registro {
-      padding: 10px; /* Reducir padding para dispositivos muy pequeños */
-    }
-  
-    .mensaje-error-backend {
-      font-size: 0.75rem; /* Reducir el tamaño del mensaje de error */
-    }
+}
+
+@media (max-width: 480px) {
+  .formulario-registro {
+      width: 90%;
+      padding: 20px;
   }
-  
+
+  .button-registrarse {
+      font-size: 0.875rem;
+      padding: 10px 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .formulario-registrarse-title {
+      font-size: 1.2rem;
+  }
+
+  .formulario-registro {
+      padding: 10px;
+  }
+}
