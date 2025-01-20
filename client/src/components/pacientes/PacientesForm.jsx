@@ -53,8 +53,8 @@ const PacientesForm = () => {
  
 
   return (
-    <div className="container">
-      <form onSubmit={onSubmit} className="mb-4">
+    <div className="pacientes-form-container">
+      <form onSubmit={onSubmit} className="form-pacientes mb-4">
         {/* Mostrar errores del backend */}
         {errors.length > 0 && (
           <div className="errores-backend">

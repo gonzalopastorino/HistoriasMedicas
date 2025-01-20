@@ -1,9 +1,20 @@
 label{
-    color: white;
+    color: rgb(197, 190, 190);
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 select{
     cursor: pointer;
+}
+/* consultar a Santi por el div "content p-4 en arch bienvenida." */
+.pacientes-form-container {
+    background-color: #1e3c72; 
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: #111112 10px 14px 8px;
+    min-height: 100vh;
 }
 
 .button-pacientes-form {
@@ -31,4 +42,13 @@ select{
     background-color: #fff;
     color: #1e3c72;
     transition: background-color 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .mb-3.row label {
+    display: none;
+    }
+    .pacientes-form-container{
+        padding: 1rem;
+    }
 }

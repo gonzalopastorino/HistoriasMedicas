@@ -5,7 +5,8 @@
 .card {
   border: 1px solid rgb(152, 156, 156);
   background-color: rgb(238, 241, 241);
-  box-shadow: rgb(127, 125, 125) 6px 10px 12px 0.8px;
+  box-shadow: #111112 10px 14px 8px;
+  /* box-shadow: rgb(127, 125, 125) 6px 10px 12px 0.8px; */
 }
 
 .btn-editar {
