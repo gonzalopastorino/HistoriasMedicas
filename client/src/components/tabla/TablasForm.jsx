@@ -1,65 +1,98 @@
 import React, { useState, useEffect } from "react";
+import DataTable from "react-data-table-component";
 import { useTasks } from "../Context/TasksContext";
 
 const TablasForm = () => {
-  const { tasks, getTasks } = useTasks();
+  const { tasks, getTasks } = useTasks(); // Obtener tareas desde el contexto
   const [search, setSearch] = useState("");
   const [filteredTasks, setFilteredTasks] = useState([]);
+  const [selectedRows, setSelectedRows] = useState([]); // Estado de filas seleccionadas
 
+  // Obtener tareas al montar
   useEffect(() => {
-    getTasks();
-  }, []);
+    const fetchTasks = async () => {
+      await getTasks();
+    };
+    fetchTasks();
+  }, [getTasks]);
 
+  // Filtrar tareas al cambiar `search` o `tasks`
   useEffect(() => {
-    setFilteredTasks(
-      tasks.filter((task) =>
-        task.nombre.toLowerCase().includes(search.toLowerCase())
-      )
+    const filtered = tasks.filter((task) =>
+      task.nombre.toLowerCase().includes(search.toLowerCase())
     );
+    setFilteredTasks(filtered);
   }, [search, tasks]);
+
+  // Manejar búsqueda
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  // Configuración de columnas
+  const columns = [
+    { name: "Nombre", selector: (row) => row.nombre, sortable: true },
+    { name: "Apellido", selector: (row) => row.apellido, sortable: true },
+    { name: "DNI", selector: (row) => row.dni, sortable: true },
+    { name: "Edad", selector: (row) => row.edad, sortable: true },
+    { name: "Diagnóstico", selector: (row) => row.diagnostico, sortable: true },
+    { name: "Obra Social", selector: (row) => row.obrasocial, sortable: true },
+    { name: "Localidad", selector: (row) => row.localidad, sortable: true },
+    { name: "Dirección", selector: (row) => row.direccion, sortable: true },
+  ];
+
+  // Controlar selección/deselección
+  const handleRowSelect = ({ selectedRows }) => {
+    setSelectedRows(selectedRows);
+  };
+
+  // Marcar las filas seleccionadas correctamente
+  const handleRowClicked = (row) => {
+    const isSelected = selectedRows.some((selected) => selected._id === row._id);
+    if (isSelected) {
+      // Si el paciente ya está seleccionado, lo desmarcamos
+      setSelectedRows((prev) => prev.filter((selected) => selected._id !== row._id));
+    } else {
+      // Si no está seleccionado, lo agregamos a la lista de seleccionados
+      setSelectedRows((prev) => [...prev, row]);
+    }
+  };
 
   return (
     <div className="container mt-4">
-      <div className="mb-3 d-flex justify-content-between align-items-center">
+      <h2>Tabla de Pacientes</h2>
+      <div className="mb-3">
         <input
           type="text"
           className="form-control w-50"
-          placeholder="Buscar por nombre del paciente"
+          placeholder="🔍 Buscar por nombre del paciente"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={handleSearchChange}
         />
-        <button className="btn btn-primary ms-2">
-          <i className="bi bi-search"></i>
-        </button>
       </div>
-      <table className="table table-striped">
-        <thead className="table-dark">
-          <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>DNI</th>
-            <th>Edad</th>
-            <th>Diagnóstico</th>
-            <th>Obra social</th>
-            <th>Localidad</th>
-            <th>Direccion</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredTasks.map((task) => (
-            <tr key={task._id}>
-              <td>{task.nombre}</td>
-              <td>{task.apellido}</td>
-              <td>{task.dni}</td>
-              <td>{task.edad}</td>
-              <td>{task.diagnostico}</td>
-              <td>{task.obrasocial}</td>
-              <td>{task.localidad}</td>
-              <td>{task.direccion}</td>
-            </tr>
+
+      <DataTable
+        title="Datos de Pacientes"
+        data={filteredTasks}
+        columns={columns}
+        pagination
+        fixedHeader
+        selectableRows
+        onSelectedRowsChange={handleRowSelect}
+        selectedRows={selectedRows.map((row) => row._id)} // Sincronizar selección con estado
+        onRowClicked={handleRowClicked} // Agregar evento de click en fila
+      />
+
+      <div className="mt-4">
+        <h4>Pacientes seleccionados:</h4>
+        <ul>
+          {selectedRows.map((row) => (
+            <li key={row._id}>
+              {row.nombre} {row.apellido}
+            </li>
           ))}
-        </tbody>
-      </table>
+        </ul>
+      </div>
     </div>
   );
 };
