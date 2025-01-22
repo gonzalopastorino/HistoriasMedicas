@@ -1,3 +1,11 @@
 .title-tasks-page {
   color: white;
 }
+/* PRUEBA */
+.dark-background {
+  background-color: #1a1a1a; /* Fondo oscuro */
+  padding: 1rem; 
+  border-radius: 5px; 
+  box-shadow: -10px 14px 60px rgba(76, 41, 251, 0.5); 
+  
+}

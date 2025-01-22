@@ -14,6 +14,7 @@ import TablasForm from "./components/tabla/TablasForm";
 import TasksPage from "./pages/taskspage/TasksPage";
 import Profile from "./pages/profile/Profile";
 import Calendario from "./pages/calendariopage/Calendario";
+import "./App.css";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
                       <SidebarMenu />
                       <div className="flex-grow-1">
                         <Navbar />
-                        <div className="p-4">
+                        <div>
                           <BienvenidaPage />
                         </div>
                       </div>
@@ -64,7 +65,7 @@ function App() {
                       <SidebarMenu />
                       <div className="flex-grow-1">
                         <Navbar />
-                        <div className="p-4">
+                        <div>
                           <PacientesForm />
                         </div>
                       </div>
@@ -78,7 +79,7 @@ function App() {
                       <SidebarMenu />
                       <div className="flex-grow-1">
                         <Navbar />
-                        <div className="p-4">
+                        <div>
                           <PacientesForm />
                         </div>
                       </div>
@@ -92,7 +93,7 @@ function App() {
                       <SidebarMenu />
                       <div className="flex-grow-1">
                         <Navbar />
-                        <div className="p-4">
+                        <div>
                           <TablasForm />
                         </div>
                       </div>
@@ -106,7 +107,7 @@ function App() {
                       <SidebarMenu />
                       <div className="flex-grow-1">
                         <Navbar />
-                        <div className="p-4">
+                        <div className="p-2">
                           <Calendario />
                         </div>
                       </div>

@@ -28,7 +28,7 @@ function TasksPage() {
   }
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 dark-background">
   <div className="row">
     {tasks.map((task) => (
       <TaskCard task={task} key={task._id} />

@@ -2,12 +2,14 @@ import { useTasks } from "../Context/TasksContext";
 import { Link } from "react-router-dom";
 import "./card.css";
 
+
 function TaskCard({ task }) {
   const { deleteTask } = useTasks();
 
   return (
+    // Estructura de la tarjeta
     <div className="col-12 col-md-6 col-lg-4 mb-4"> {/* Columna adaptable */}
-      <div className="card h-100"> {/* Card que se adapta al contenido */}
+      <div className="card h-100" > {/* Card que se adapta al contenido */}
         <div className="card-body">
           {/* Información de la tarea */}
           <p><strong>Nombre:</strong> {task.nombre}</p>
@@ -22,13 +24,13 @@ function TaskCard({ task }) {
         
         <div className="card-body d-flex flex-wrap gap-2 justify-content-center">
           {/* Botones responsivos */}
-          <Link>
-          <button 
+          <Link
+          
             to={`/tasks/${task._id}`} 
             className="btn btn-editar flex-grow-1 flex-md-grow-0 w-100 w-md-auto"
           >
             Editar
-          </button>
+          
           </Link>
           <button 
             className="btn btn-eliminar flex-grow-1 flex-md-grow-0 w-100 w-md-auto" 
@@ -39,6 +41,7 @@ function TaskCard({ task }) {
         </div>
       </div>
     </div>
+    
   );
 }
 

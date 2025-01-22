@@ -3,6 +3,7 @@ import { Calendar, dayjsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import dayjs from "dayjs";
 import { getEventsRequest,createEventRequest } from "../../api/calendario.js"; // Importa las funciones de la API
+import "./calendario.css";
 
 
 // Configuración de los mensajes en español
@@ -82,20 +83,58 @@ const Calendario = () => {
   };
 
   return (
-    <div>
+    // <div>
+    //   <h2>Calendario de Eventos</h2>
+
+    //   {/* Calendario */}
+    //   <div className="calendario" 
+    //   style={{ height: "75vh", width: "100%", backgroundImage: "linear-gradient(to top,rgb(39, 105, 172) 0%,rgb(227, 228, 231) 1%,rgb(255, 255, 255) 100%)" }}>
+    //     <Calendar
+    //       localizer={localizer}
+    //       events={eventos}
+    //       startAccessor="start"
+    //       endAccessor="end"
+    //       onSelectSlot={({ start }) => manejarClicFecha(start)} // Llamar a manejarClicFecha al hacer clic en una fecha
+    //       selectable={true} // Habilitar la selección de fecha
+    //       messages={mensajesEspañol} // Mensajes en español
+    //     />
+    //   </div>
+    // </div>
+
+    <div className="calendario-container">
       <h2>Calendario de Eventos</h2>
+      <div className="calendario-header">
+        {/* Contenedor para los botones "Hoy", "Anterior", "Siguiente" */}
+        {/* <div className="calendario-nav d-flex justify-content-center">
+          <button className="btn btn-nav">Anterior</button>
+          <button className="btn btn-nav">Hoy</button>
+          <button className="btn btn-nav">Siguiente</button>
+        </div> */}
+
+        {/* Contenedor para la fecha actual, centrada */}
+        <div className="fecha-actual text-center mt-2">
+          <span>Fecha actual: {dayjs().format("DD/MM/YYYY")}</span>
+        </div>
+
+        {/* Contenedor para los botones de "Mes", "Semana", "Día", "Agenda" */}
+        {/* <div className="calendario-toolbar d-flex justify-content-center mt-3">
+          <button className="btn btn-toolbar">Mes</button>
+          <button className="btn btn-toolbar">Semana</button>
+          <button className="btn btn-toolbar">Día</button>
+          <button className="btn btn-toolbar">Agenda</button>
+        </div> */}
+      </div>
 
       {/* Calendario */}
-      <div className="calendario" 
-      style={{ height: "75vh", width: "100%", backgroundImage: "linear-gradient(to top,rgb(39, 105, 172) 0%,rgb(227, 228, 231) 1%,rgb(255, 255, 255) 100%)" }}>
+      <div className="calendario-body" style={{ height: "80vh" }}>
         <Calendar
           localizer={localizer}
           events={eventos}
           startAccessor="start"
           endAccessor="end"
-          onSelectSlot={({ start }) => manejarClicFecha(start)} // Llamar a manejarClicFecha al hacer clic en una fecha
-          selectable={true} // Habilitar la selección de fecha
-          messages={mensajesEspañol} // Mensajes en español
+          onSelectSlot={({ start }) => manejarClicFecha(start)}
+          selectable={true}
+          messages={mensajesEspañol}
         />
       </div>
     </div>

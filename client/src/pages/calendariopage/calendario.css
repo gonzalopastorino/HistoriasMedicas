@@ -1,0 +1,107 @@
+/* Contenedor principal del calendario */
+.calendario-container {
+  padding: 10px;
+  width: 100%;
+  min-height: 80%;
+}
+
+/* Estilo general de los botones */
+.btn-nav, .btn-toolbar {
+  font-size: 1rem;
+  padding: 8px 12px;
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Agrupar los botones "Hoy", "Anterior", "Siguiente" */
+.calendario-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espacio entre botones */
+}
+
+/* Centrar la fecha actual debajo de los botones */
+.fecha-actual {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Agrupar los botones "Mes", "Semana", "Día", "Agenda" */
+.calendario-toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Estilo para el calendario */
+.calendario-body {
+  background-image: linear-gradient(to top, rgb(39, 105, 172) 0%, rgb(227, 228, 231) 1%, rgb(255, 255, 255) 100%);
+}
+
+.rbc-toolbar {
+  flex-direction: row;
+  background-color: #acacb2;
+  border: 1px solid #4a4a4d;
+  border-radius: 5px;
+  padding: 5px;
+
+}
+.rbc-toolbar {
+  color: white;
+  align-items: center;
+}
+
+.rbc-btn-group button {
+  cursor: pointer;
+  background-color: #759aca;
+  border: 2px solid #4a4a4d;
+  color: rgb(48, 46, 46);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Responsividad: Ajustar botones y texto en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .calendario-container{
+    padding: 5px; /* Reducir el padding del contenedor */
+    height: 100vh;
+    width: 100%;
+  }
+  .btn-nav, .btn-toolbar {
+    font-size: 0.9rem; /* Reducir tamaño de los botones */
+    padding: 6px 10px;
+  }
+
+  .fecha-actual {
+    font-size: 1rem; /* Reducir tamaño de la fecha */
+  }
+  .rbc-btn-group {
+    display: flex;
+    gap: 60px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .calendario-container{
+    padding: 5px; /* Reducir el padding del contenedor */
+    height: 100vh;
+    width: 100%;
+  }
+  .btn-nav, .btn-toolbar {
+    font-size: 0.8rem; /* Ajustar aún más en móviles */
+    padding: 5px 8px;
+  }
+
+  .fecha-actual {
+    font-size: 1rem; /* Reducir aún más el tamaño de la fecha */
+    padding: 5px;
+  }
+  .rbc-btn-group {
+    display: flex;
+    gap: 5px;
+    margin: 5px;
+  }
+
+}

@@ -6,7 +6,7 @@ const BienvenidaPage = () => {
   const [view, setView] = useState("inicio");
 
   return (
-    <div className="content p-4">
+    <div>
       {/* Mostrar el carrusel solo cuando estamos en la vista de inicio */}
       {view === "inicio" && <Carrusel />}
     </div>
