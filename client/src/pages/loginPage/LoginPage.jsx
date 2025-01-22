@@ -10,14 +10,14 @@ const LoginPage = () => {
     const navigate = useNavigate();  
 
     useEffect(() => {  
-        console.log('Estado de isAuthenticated en Login:', isAuthenticated);  
+        
         if (isAuthenticated) {  
             navigate("/bienvenida");  
         }  
     }, [isAuthenticated, navigate]);
 
     const onSubmit = handleSubmit(data => {  
-        console.log('Datos de inicio de sesión enviados:', data);  
+       
         signin(data);  
     });
 

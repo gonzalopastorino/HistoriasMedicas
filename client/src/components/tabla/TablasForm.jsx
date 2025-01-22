@@ -43,19 +43,13 @@ const TablasForm = () => {
 
   // Controlar selección/deselección
   const handleRowSelect = ({ selectedRows }) => {
-    setSelectedRows(selectedRows);
-  };
-
-  // Marcar las filas seleccionadas correctamente
-  const handleRowClicked = (row) => {
-    const isSelected = selectedRows.some((selected) => selected._id === row._id);
-    if (isSelected) {
-      // Si el paciente ya está seleccionado, lo desmarcamos
-      setSelectedRows((prev) => prev.filter((selected) => selected._id !== row._id));
-    } else {
-      // Si no está seleccionado, lo agregamos a la lista de seleccionados
-      setSelectedRows((prev) => [...prev, row]);
-    }
+    // Filtrar duplicados en las filas seleccionadas
+    const uniqueRows = selectedRows.filter(
+      (row, index, self) =>
+        self.findIndex((r) => r._id === row._id) === index
+    );
+   
+    setSelectedRows(uniqueRows);
   };
 
   return (
@@ -79,8 +73,7 @@ const TablasForm = () => {
         fixedHeader
         selectableRows
         onSelectedRowsChange={handleRowSelect}
-        selectedRows={selectedRows.map((row) => row._id)} // Sincronizar selección con estado
-        onRowClicked={handleRowClicked} // Agregar evento de click en fila
+        keyField="_id" // Configuración para usar el campo _id como clave única
       />
 
       <div className="mt-4">
