@@ -50,7 +50,7 @@ const SidebarMenu = () => {
                   navigate("/bienvenida"); // Navegar a la página de inicio  
                 }}
               >
-                <i className="bi bi-house-door-fill text-white"></i>
+                <i className="bi bi-house-door-fill text-white" title="Inicio"></i>
                 <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Inicio</span>
               </a>
             </li>
@@ -67,7 +67,7 @@ const SidebarMenu = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <i className="bi bi-people-fill text-white"></i>
+                <i className="bi bi-people-fill text-white" title="Pacientes"></i>
                 <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Pacientes</span>
                 <i className="bi bi-caret-right-fill ms-auto"></i>
               </a>
@@ -120,7 +120,7 @@ const SidebarMenu = () => {
                 className="text-decoration-none text-white p-2 d-flex align-items-center"
                 href="#"
               >
-                <i className="bi bi-calendar-event text-white"></i>
+                <i className="bi bi-calendar-event text-white" title="Turno"></i>
                 <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Turno</span>
               </a>
             </li>
@@ -137,7 +137,7 @@ const SidebarMenu = () => {
                   navigate("/calendario"); // Navegar a la página de inicio  
                 }}
               >
-                <i className="bi bi-calendar-date text-white"></i>
+                <i className="bi bi-calendar-date text-white" title="Calendario"></i>
                 <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Calendario</span>
               </a>
             </li>
@@ -148,7 +148,7 @@ const SidebarMenu = () => {
                 className="text-decoration-none text-white p-2 d-flex align-items-center"
                 href="#"
               >
-                <i className="bi bi-gear text-white"></i>
+                <i className="bi bi-gear text-white" title="Configuración"></i>
                 <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Configuración</span>
               </a>
             </li>
@@ -163,7 +163,7 @@ const SidebarMenu = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <i className="bi bi-person-circle fs-4"></i>
+                <i className="bi bi-person-circle fs-4" title="Tócame"></i>
                 <span className={`ms-3 ${menuCollapsed ? "d-none" : "d-inline"}`}>Tócame</span>
                 <i className="bi bi-caret-right-fill ms-auto"></i>
               </a>
