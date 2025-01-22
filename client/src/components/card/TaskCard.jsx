@@ -19,13 +19,16 @@ function TaskCard({ task }) {
           <p><strong>Localidad:</strong> {task.localidad}</p>
           <p><strong>Direccion:</strong> {task.direccion}</p>
         </div>
+        
         <div className="card-body d-flex flex-wrap gap-2 justify-content-center">
           {/* Botones responsivos */}
-          <Link 
+          <Link>
+          <button 
             to={`/tasks/${task._id}`} 
             className="btn btn-editar flex-grow-1 flex-md-grow-0 w-100 w-md-auto"
           >
             Editar
+          </button>
           </Link>
           <button 
             className="btn btn-eliminar flex-grow-1 flex-md-grow-0 w-100 w-md-auto" 
