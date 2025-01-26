@@ -81,13 +81,13 @@
 }
 
 /* Estilo para el mensaje de error */
-.mensaje-error {
-  color: white;
+.mensaje-error-backend {
+  color: red;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
   margin-top: 0.5rem;
-  visibility: hidden;
+  
 }
 
 /* Hacemos visible el mensaje de error solo cuando es necesario */

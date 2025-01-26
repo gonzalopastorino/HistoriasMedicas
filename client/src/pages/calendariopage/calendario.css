@@ -1,3 +1,12 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que los bordes y padding no alteren el tamaño */
+  background-color: #1e3c72; /* Fondo global */
+  height: 100%; /* Extiende el fondo hasta el final */
+}
+
+
 /* Contenedor principal del calendario */
 .calendario-container {
   padding: 10px;

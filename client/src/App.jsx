@@ -14,6 +14,7 @@ import TablasForm from "./components/tabla/TablasForm";
 import TasksPage from "./pages/taskspage/TasksPage";
 import Profile from "./pages/profile/Profile";
 import Calendario from "./pages/calendariopage/Calendario";
+import CalendarioForm from "./pages/calendariopage/CalendarioForm";
 import "./App.css";
 
 function App() {
@@ -109,6 +110,20 @@ function App() {
                         <Navbar />
                         <div className="p-2">
                           <Calendario />
+                        </div>
+                      </div>
+                    </div>
+                  }
+                />
+                <Route
+                  path="/calendario/nuevo-turno"
+                  element={
+                    <div className="d-flex">
+                      <SidebarMenu />
+                      <div className="flex-grow-1">
+                        <Navbar />
+                        <div className="p-2">
+                          <CalendarioForm />
                         </div>
                       </div>
                     </div>

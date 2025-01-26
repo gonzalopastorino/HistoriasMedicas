@@ -24,12 +24,15 @@ const LoginPage = () => {
     return (  
         <div className="section-formulario-registro">  
             <div className="formulario-registro">  
-                <h3 className="formulario-registrarse-title">Iniciar Sesión</h3>  
+                <h3 className="formulario-registrarse-title">Iniciar Sesión</h3>
+                <div className="errores-backend">  
                 {signinErrors.map((error, i) => (  
-                    <div className="errores-registro" key={i}>  
+                    <p  key={i} className="mensaje-error-backend">  
                         {error}  
-                    </div>  
-                ))}  
+                    </p>
+                      
+                ))}
+                </div>  
                 <form onSubmit={onSubmit} className="formulario">  
                     <div className={`form-input-group ${errors.email ? "has-error" : ""}`}>  
                         <input  
